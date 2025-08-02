@@ -71,16 +71,15 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
   };
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-br from-slate-50 to-navy-50">
+    <section id="about" className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
+          <h2 className="clamp(2rem, 4vw, 3rem) font-bold text-[#f9fafb] mb-6 leading-[1.2]">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-navy-600 to-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            I'm a Professional AI/ML Engineer with an experience of 1+ years.
+          <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
+            I'm a Professional AI/ML Engineer with an experience of 2+ years.
           </p>
         </div>
 
@@ -93,10 +92,10 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
               <div className="space-y-4">
                 {personalInfo.slice(0, 4).map((info, index) => (
                   <div key={index} className="flex items-center">
-                    <Play className="w-4 h-4 text-navy-600 mr-3 flex-shrink-0" />
+                    <Play className="w-4 h-4 text-[#8b5cf6] mr-3 flex-shrink-0" />
                     <div>
-                      <span className="text-sm font-semibold text-slate-700">{info.label}: </span>
-                      <span className="text-slate-600">{info.value}</span>
+                      <span className="text-sm font-semibold text-[#e5e7eb]">{info.label}: </span>
+                      <span className="text-[#9ca3af]">{info.value}</span>
                     </div>
                   </div>
                 ))}
@@ -106,10 +105,10 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
               <div className="space-y-4">
                 {personalInfo.slice(4, 8).map((info, index) => (
                   <div key={index} className="flex items-center">
-                    <Play className="w-4 h-4 text-navy-600 mr-3 flex-shrink-0" />
+                    <Play className="w-4 h-4 text-[#8b5cf6] mr-3 flex-shrink-0" />
                     <div>
-                      <span className="text-sm font-semibold text-slate-700">{info.label}: </span>
-                      <span className="text-slate-600">{info.value}</span>
+                      <span className="text-sm font-semibold text-[#e5e7eb]">{info.label}: </span>
+                      <span className="text-[#9ca3af]">{info.value}</span>
                     </div>
                   </div>
                 ))}
@@ -119,31 +118,49 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
             {/* Key Metrics - 2x2 Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {portfolioData.about.metrics.map((metric: any, index: number) => (
-                <div key={index} className="text-center p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                  <div className="flex justify-center mb-3">
-                    {getIconComponent(metric.icon)}
+                <div 
+                  key={index} 
+                  className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                  style={{
+                    backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+                  }}
+                >
+                  {/* Metric Header with Icon and Title */}
+                  <div className="flex pb-4 items-center justify-center">
+                    <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                      {getIconComponent(metric.icon)}
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#f9fafb]">{metric.title}</h3>
                   </div>
-                  <div className="text-3xl font-bold text-navy-900 mb-2">{metric.number}</div>
-                  <div className="text-sm font-semibold text-slate-700 mb-2">{metric.title}</div>
-                  <p className="text-xs text-slate-600 leading-relaxed">{metric.description}</p>
+
+                  {/* Metric Number */}
+                  <div className="text-3xl font-bold text-[#f9fafb] mb-2 text-center">{metric.number}</div>
+
+                  {/* Metric Description */}
+                  <p className="text-[#e5e7eb] text-sm leading-relaxed text-center">{metric.description}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Skills Proficiency Section */}
-          <div className="bg-slate-50 rounded-lg p-8 border border-slate-200">
-            <h3 className="text-2xl font-bold text-navy-900 mb-8 text-center">Skills Proficiency</h3>
+          <div 
+            className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+            style={{
+              backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+            }}
+          >
+            <h3 className="text-2xl font-bold text-[#f9fafb] mb-8 text-center">Skills Proficiency</h3>
             <div className="space-y-6">
               {portfolioData.about.skills.map((skill: any, index: number) => (
                 <div key={index}>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-semibold text-slate-700">{skill.name}</span>
-                    <span className="text-sm text-slate-600">{skill.percentage}%</span>
+                    <span className="text-sm font-semibold text-[#e5e7eb]">{skill.name}</span>
+                    <span className="text-sm text-[#9ca3af]">{skill.percentage}%</span>
                   </div>
-                  <div className="w-full bg-slate-200 rounded-full h-3">
+                  <div className="w-full bg-[#374151] rounded-full h-3">
                     <div 
-                      className="bg-black h-3 rounded-full transition-all duration-1000"
+                      className="bg-[#8b5cf6] h-3 rounded-full transition-all duration-1000"
                       style={{ width: `${skill.percentage}%` }}
                     ></div>
                   </div>
@@ -154,39 +171,39 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
 
           {/* Technical Skills Section */}
           <div className="mt-16">
-            <h3 className="text-3xl font-bold text-navy-900 text-center mb-12">Technical Skills</h3>
+            <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-12">Technical Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {skillCategories.map((category, index) => (
                 <div
                   key={category.title}
-                  className="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group"
+                  className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                  style={{
+                    backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+                  }}
                 >
-                  {/* Icon */}
-                  <div className="text-slate-700 mb-4 group-hover:text-slate-900 transition-colors duration-200">
-                    {category.icon}
+                  {/* Technical Skills Header with Icon and Title */}
+                  <div className="flex pb-4 items-center">
+                    <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                      {category.icon}
+                    </div>
+                    <h4 className="text-2xl font-bold text-[#f9fafb]">
+                      {category.title}
+                    </h4>
                   </div>
 
-                  {/* Title */}
-                  <h4 className="text-xl font-bold text-slate-900 mb-3">
-                    {category.title}
-                  </h4>
-
                   {/* Description */}
-                  <p className="text-slate-600 mb-4 leading-relaxed text-sm">
+                  <p className="text-gray-600 dark:text-gray-400 pb-4">
                     {getCategoryDescription(category.title)}
                   </p>
 
-                  {/* Technology Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  {/* Technology Tags as List */}
+                  <ul className="list-disc space-y-2 pl-6">
                     {category.skills.map((skill: string, skillIndex: number) => (
-                      <span
-                        key={skill}
-                        className="px-2 py-1 bg-white text-slate-700 text-xs rounded-md border border-slate-200 font-medium"
-                      >
+                      <li key={skill} className="font-medium text-[#e5e7eb]">
                         {skill}
-                      </span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               ))}
             </div>
@@ -194,19 +211,35 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
 
           {/* Certificates and Awards */}
           <div className="mt-16">
-            <h3 className="text-3xl font-bold text-navy-900 text-center mb-12">Certificates and Awards</h3>
+            <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-12">Certificates and Awards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {portfolioData.resume.certificates?.map((certificate: any, index: number) => (
                 <div
                   key={index}
-                  className="flex items-start p-6 bg-slate-50 rounded-lg border border-slate-200 hover:shadow-lg transition-all duration-300 group"
+                  className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                  style={{
+                    backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+                  }}
                 >
-                  <Award className="w-6 h-6 text-navy-600 mr-4 mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-slate-900 mb-1">{certificate.name}</h4>
-                    <p className="text-slate-600 text-sm mb-1">{certificate.issuer}</p>
-                    <p className="text-slate-500 text-xs">{certificate.date}</p>
+                  {/* Certificate Header with Icon and Title */}
+                  <div className="flex pb-4 items-center">
+                    <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                      <Award className="w-12 h-12" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-[#f9fafb]">
+                      {certificate.name}
+                    </h4>
                   </div>
+
+                  {/* Certificate Details as List */}
+                  <ul className="list-disc space-y-2 pl-6">
+                    <li className="font-medium text-[#e5e7eb]">
+                      <strong>Issuer:</strong> {certificate.issuer}
+                    </li>
+                    <li className="font-medium text-[#e5e7eb]">
+                      <strong>Date:</strong> {certificate.date}
+                    </li>
+                  </ul>
                 </div>
               ))}
             </div>

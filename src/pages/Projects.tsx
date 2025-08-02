@@ -7,7 +7,7 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
   return (
-    <div className="page-container pt-20">
+    <div className="min-h-screen bg-[#0a0a0a] pt-20">
       <ProjectsSection portfolioData={portfolioData} />
     </div>
   );

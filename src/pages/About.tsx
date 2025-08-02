@@ -7,7 +7,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ portfolioData }) => {
   return (
-    <div className="page-container pt-20">
+    <div className="min-h-screen bg-[#0a0a0a] pt-20">
       <AboutSection portfolioData={portfolioData} />
     </div>
   );

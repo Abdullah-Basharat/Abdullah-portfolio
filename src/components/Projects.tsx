@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ExternalLink, Github, X, ChevronLeft, ChevronRight, Eye, Brain, Code, Database, Cpu, Globe, FileText, Shield, Zap, Target, Rocket } from 'lucide-react';
 
 interface ProjectsProps {
   portfolioData: any;
@@ -15,6 +15,45 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
     ? portfolioData.projects 
     : portfolioData.projects.filter((project: any) => project.category === filter);
 
+  const getProjectIcon = (category: string) => {
+    switch (category.toLowerCase()) {
+      case 'ai/ml':
+      case 'machine learning':
+      case 'computer vision':
+        return <Brain className="w-12 h-12" />;
+      case 'web development':
+      case 'frontend':
+      case 'backend':
+        return <Code className="w-12 h-12" />;
+      case 'data engineering':
+      case 'database':
+        return <Database className="w-12 h-12" />;
+      case 'nlp':
+      case 'natural language processing':
+        return <Cpu className="w-12 h-12" />;
+      case 'full-stack':
+      case 'application':
+        return <Globe className="w-12 h-12" />;
+      case 'mobile':
+      case 'app':
+        return <FileText className="w-12 h-12" />;
+      case 'security':
+      case 'cybersecurity':
+        return <Shield className="w-12 h-12" />;
+      case 'automation':
+      case 'scripting':
+        return <Zap className="w-12 h-12" />;
+      case 'research':
+      case 'analysis':
+        return <Target className="w-12 h-12" />;
+      case 'innovation':
+      case 'experimental':
+        return <Rocket className="w-12 h-12" />;
+      default:
+        return <Eye className="w-12 h-12" />;
+    }
+  };
+
   const openProjectModal = (project: any) => {
     setSelectedProject(project);
     document.body.style.overflow = 'hidden';
@@ -26,123 +65,54 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="clamp(2rem, 4vw, 3rem) font-bold text-[#f9fafb] mb-6 leading-[1.2]">
             Featured Projects
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
             Explore my latest work in AI/ML, showcasing innovative solutions and cutting-edge technologies
           </p>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setFilter(category)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  filter === category
-                    ? 'bg-slate-700 text-white shadow-lg'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+
         </div>
 
         {/* Projects Grid */}
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project: any, index: number) => (
             <div
               key={project.id}
-              className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 hover:scale-105"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+              style={{
+                backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+              }}
             >
-              {/* Project Image */}
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-navy-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button
-                    onClick={() => openProjectModal(project)}
-                    className="bg-white text-navy-900 px-6 py-2 rounded-lg font-medium hover:bg-slate-100 transition-colors duration-200"
-                  >
-                    View Details
-                  </button>
+              {/* Project Header with Icon and Title */}
+              <div className="flex pb-4 items-start">
+                <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                  {getProjectIcon(project.category)}
                 </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">
-                    {project.category}
-                  </span>
-                  {project.featured && (
-                    <span className="px-3 py-1 bg-amber-100 text-amber-700 text-sm font-medium rounded-lg">
-                      Featured
-                    </span>
-                  )}
-                </div>
-
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors duration-200">
+                <h3 className="text-2xl font-bold text-[#f9fafb] text-left">
                   {project.title}
                 </h3>
-
-                <p className="text-slate-600 mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.slice(0, 3).map((tech: string) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md">
-                      +{project.technologies.length - 3} more
-                    </span>
-                  )}
-                </div>
-
-                {/* Links */}
-                <div className="flex gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors duration-200"
-                  >
-                    <Github size={18} />
-                    <span className="text-sm font-medium">Code</span>
-                  </a>
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors duration-200"
-                    >
-                      <ExternalLink size={18} />
-                      <span className="text-sm font-medium">Demo</span>
-                    </a>
-                  )}
-                </div>
               </div>
+
+              {/* Project Description */}
+              <p className="text-gray-600 dark:text-gray-400 pb-4">
+                {project.description}
+              </p>
+
+              {/* Technologies as List */}
+              <ul className="list-disc space-y-2 pl-6">
+                {project.technologies.slice(0, 4).map((tech: string) => (
+                  <li key={tech} className="font-medium text-[#e5e7eb]">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
           </div>
