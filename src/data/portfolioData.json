@@ -1,0 +1,112 @@
+{
+  "personal": {
+    "name": "Abdullah Basharat",
+    "title": "AI/ML Engineer",
+    "roles": [
+      "AI/ML Engineer",
+      "Deep Learning Specialist", 
+      "RAG Developer",
+      "Data Scientist"
+    ],
+    "tagline": "Transforming ideas into intelligent solutions through cutting-edge AI/ML technologies",
+    "email": "abdullahbasharat400@gmail.com",
+    "phone": "+92 316 5181993",
+    "location": "Lahore, Pakistan",
+    "social": {
+      "github": "https://github.com/abdullahbasharat",
+      "linkedin": "https://linkedin.com/in/abdullahbasharat",
+      "email": "abdullahbasharat400@gmail.com"
+    },
+    "resumeUrl": "/resume.pdf"
+  },
+  "about": {
+    "introduction": "Passionate AI/ML Engineer with expertise in Large Language Models, RAG systems, and deep learning. Currently pursuing Data Science at PUCIT with a strong academic record and hands-on experience in developing intelligent solutions.",
+    "education": {
+      "degree": "Bachelor of Data Science",
+      "institution": "Punjab University College of Information Technology (PUCIT)",
+      "gpa": "3.86/4.00",
+      "year": "2022-2026"
+    },
+    "stats": {
+      "experience": "1+",
+      "projects": "15+",
+      "technologies": "20+"
+    }
+  },
+  "skills": {
+    "programming": ["Python", "SQL", "JavaScript", "Django", "FastAPI"],
+    "aiml": ["LLMs", "RAG Systems", "Computer Vision", "TensorFlow", "PyTorch", "Scikit-learn"],
+    "dataEngineering": ["BigQuery", "MongoDB", "AWS", "Azure", "PostgreSQL"],
+    "tools": ["LangChain", "ChromaDB", "OpenCV", "Git", "Docker", "Jupyter"]
+  },
+  "experience": [
+    {
+      "title": "AI/ML Engineer",
+      "company": "Techtics.ai",
+      "period": "June 2025 – Present",
+      "type": "Full-time",
+      "description": "Developing and deploying advanced AI/ML solutions with focus on LLMs and RAG systems.",
+      "achievements": [
+        "Built production-ready RAG systems using LangChain and ChromaDB",
+        "Implemented agentic chunking for improved context retrieval",
+        "Developed real-time AI-powered chatbots with 95% accuracy"
+      ]
+    },
+    {
+      "title": "AI/ML Intern",
+      "company": "Techtics.ai", 
+      "period": "Feb 2025 – May 2025",
+      "type": "Internship",
+      "description": "Gained hands-on experience in machine learning model development and deployment.",
+      "achievements": [
+        "Developed computer vision models for object detection",
+        "Worked on natural language processing projects",
+        "Collaborated with senior engineers on ML pipeline optimization"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Pakistan Sign Language Recognition",
+      "description": "Advanced computer vision system for recognizing Pakistan Sign Language gestures using I3D ConvNet architecture.",
+      "longDescription": "Developed a comprehensive sign language recognition system achieving 88% accuracy on 30 gesture classes. The system uses advanced deep learning techniques including I3D ConvNet for temporal feature extraction and real-time gesture recognition.",
+      "technologies": ["Python", "TensorFlow", "OpenCV", "I3D ConvNet", "Computer Vision"],
+      "image": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/abdullahbasharat/psl-recognition",
+      "demo": "",
+      "featured": true,
+      "category": "Computer Vision"
+    },
+    {
+      "id": 2,
+      "title": "RAG-Powered Chatbot",
+      "description": "Intelligent chatbot leveraging Retrieval-Augmented Generation with LangChain and ChromaDB for context-aware responses.",
+      "longDescription": "Built a sophisticated chatbot system using RAG architecture with LangChain, LangGraph, and ChromaDB. Features include agentic chunking, real-time context retrieval, and multi-turn conversation handling with high accuracy.",
+      "technologies": ["Python", "LangChain", "ChromaDB", "RAG", "LLMs", "FastAPI"],
+      "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/abdullahbasharat/rag-chatbot",
+      "demo": "",
+      "featured": true,
+      "category": "AI/ML"
+    },
+    {
+      "id": 3,
+      "title": "Speech-to-Text & OCR Pipeline",
+      "description": "Bilingual text processing system supporting English and Urdu with advanced OCR capabilities.",
+      "longDescription": "Developed a comprehensive text processing pipeline supporting both speech-to-text conversion and optical character recognition for English and Urdu languages. Integrates OpenCV for image preprocessing and Tesseract for accurate text extraction.",
+      "technologies": ["Python", "OpenCV", "Tesseract", "NLP", "Speech Recognition"],
+      "image": "https://images.pexels.com/photos/5965592/pexels-photo-5965592.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/abdullahbasharat/speech-ocr-pipeline",
+      "demo": "",
+      "featured": true,
+      "category": "NLP"
+    }
+  ],
+  "achievements": [
+    "Dean's List recognition for academic excellence (GPA: 3.86/4.00)",
+    "Successfully deployed multiple AI/ML models in production",
+    "Contributed to open-source AI/ML projects",
+    "Published research on computer vision applications"
+  ]
+}
