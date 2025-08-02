@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
   const roles = portfolioData.personal.roles;
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
     
     if (isTyping) {
       if (displayText.length < roles[currentRole].length) {
@@ -42,40 +42,33 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
 
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-navy-50 to-slate-100">
+    <section id="home" className="min-h-screen flex items-center justify-center relative bg-[#0a0a0a]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, #1e3a8a 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, #8b5cf6 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }}></div>
       </div>
 
       <div className="container mx-auto px-6 py-20 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Avatar */}
-          <div className="mb-8 animate-fade-in">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-navy-600 to-blue-600 flex items-center justify-center text-white text-3xl font-bold shadow-xl">
-              {portfolioData.personal.name.split(' ').map((n: string) => n[0]).join('')}
-            </div>
-          </div>
-
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold text-navy-900 mb-6 animate-slide-up">
+          <h1 className="clamp(2.5rem, 5vw, 4rem) font-extrabold text-[#f9fafb] mb-6 animate-slide-up leading-[1.1]">
             {portfolioData.personal.name}
           </h1>
 
           {/* Dynamic Role */}
-          <div className="text-2xl md:text-3xl text-slate-600 mb-8 h-12 flex items-center justify-center animate-slide-up-delay-1">
+          <div className="text-2xl md:text-3xl text-[#e5e7eb] mb-8 h-12 flex items-center justify-center animate-slide-up-delay-1">
             <span className="mr-3">I'm a</span>
-            <span className="text-navy-600 font-semibold min-w-[300px] text-left">
+            <span className="text-[#8b5cf6] font-semibold min-w-[300px] text-left">
               {displayText}
               <span className="animate-pulse">|</span>
             </span>
           </div>
 
           {/* Tagline */}
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up-delay-2">
+          <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto mb-12 leading-[1.7] animate-slide-up-delay-2">
             {portfolioData.personal.tagline}
           </p>
 
@@ -83,16 +76,16 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up-delay-3">
             <Link
               to="/projects"
-              className="bg-navy-600 text-white px-8 py-4 rounded-lg hover:bg-navy-700 transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2 group"
+              className="bg-[#8b5cf6] text-white px-6 py-3 rounded-lg hover:bg-[#7c3aed] transition-all duration-150 ease-in-out hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center gap-2 group font-medium text-[1.125rem] leading-[1.2]"
             >
-              View My Work
+              <span className="group-hover:text-white">View My Work</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-navy-600 text-navy-600 px-8 py-4 rounded-lg hover:bg-navy-600 hover:text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
+              className="border border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-150 ease-in-out transform hover:scale-[1.02] group font-medium text-[1.125rem] leading-[1.2]"
             >
-              Get In Touch
+              <span className="group-hover:text-white">Get In Touch</span>
             </Link>
           </div>
 
@@ -102,7 +95,7 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
               href={portfolioData.personal.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-600 hover:text-navy-600 hover:shadow-lg transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 bg-[#1f2937] rounded-full flex items-center justify-center text-[#9ca3af] hover:text-[#8b5cf6] hover:shadow-lg transition-all duration-300 hover:scale-110 border border-[#374151]"
             >
               <Github size={24} />
             </a>
@@ -110,25 +103,25 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
               href={portfolioData.personal.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-600 hover:text-navy-600 hover:shadow-lg transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 bg-[#1f2937] rounded-full flex items-center justify-center text-[#9ca3af] hover:text-[#8b5cf6] hover:shadow-lg transition-all duration-300 hover:scale-110 border border-[#374151]"
             >
               <Linkedin size={24} />
             </a>
             <a
               href={`mailto:${portfolioData.personal.email}`}
-              className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-600 hover:text-navy-600 hover:shadow-lg transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 bg-[#1f2937] rounded-full flex items-center justify-center text-[#9ca3af] hover:text-[#8b5cf6] hover:shadow-lg transition-all duration-300 hover:scale-110 border border-[#374151]"
             >
               <Mail size={24} />
             </a>
           </div>
 
           {/* Scroll Indicator */}
-          <Link
+          {/* <Link
             to="/about"
-            className="animate-bounce text-slate-400 hover:text-navy-600 transition-colors duration-300"
+            className="animate-bounce text-slate-400 hover:text-slate-600 transition-colors duration-300"
           >
             <ChevronDown size={32} />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle, Share2, CheckCircle, AlertCircle } from 'lucide-react';
 
 interface ContactProps {
   portfolioData: any;
@@ -28,7 +28,6 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
     
     // Simulate form submission
     try {
-      // In a real application, you would integrate with EmailJS or similar service
       await new Promise(resolve => setTimeout(resolve, 2000));
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -40,171 +39,163 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
-      value: portfolioData.personal.email,
-      link: `mailto:${portfolioData.personal.email}`
-    },
-    {
-      icon: <Phone className="w-6 h-6" />,
-      title: 'Phone',
-      value: portfolioData.personal.phone,
-      link: `tel:${portfolioData.personal.phone}`
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: 'Location',
-      value: portfolioData.personal.location,
-      link: '#'
-    }
-  ];
-
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 to-navy-50">
+    <section className="py-24 bg-slate-50">
       <div className="container mx-auto px-6">
+        {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
-            Get In Touch
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Contact Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-navy-600 to-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-            Ready to collaborate? I'm always open to discussing new opportunities and interesting projects.
-          </p>
+          {/* <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Feel Free to ask me a message. You will find me very responsive!
+          </p> */}
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-2xl font-bold text-navy-900 mb-8">Let's Connect</h3>
+        {/* Main Content - Two Columns */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="grid lg:grid-cols-2 gap-8">
+            
+            {/* Left Column - Contact Information */}
+            <div className="space-y-6">
               
-              {/* Contact Cards */}
-              <div className="space-y-6 mb-8">
-                {contactInfo.map((info, index) => (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="flex items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-navy-600 to-blue-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-200">
-                      {info.icon}
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="text-lg font-semibold text-navy-900">{info.title}</h4>
-                      <p className="text-slate-600">{info.value}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              {/* Social Links */}
-              <div>
-                <h4 className="text-lg font-semibold text-navy-900 mb-4">Follow Me</h4>
-                <div className="flex gap-4">
-                  <a
-                    href={portfolioData.personal.social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white rounded-lg shadow-lg flex items-center justify-center text-slate-600 hover:text-navy-600 hover:shadow-xl transition-all duration-300 hover:scale-110"
-                  >
-                    <Github size={24} />
-                  </a>
-                  <a
-                    href={portfolioData.personal.social.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white rounded-lg shadow-lg flex items-center justify-center text-slate-600 hover:text-navy-600 hover:shadow-xl transition-all duration-300 hover:scale-110"
-                  >
-                    <Linkedin size={24} />
-                  </a>
-                  <a
-                    href={`mailto:${portfolioData.personal.email}`}
-                    className="w-12 h-12 bg-white rounded-lg shadow-lg flex items-center justify-center text-slate-600 hover:text-navy-600 hover:shadow-xl transition-all duration-300 hover:scale-110"
-                  >
-                    <Mail size={24} />
-                  </a>
+              {/* Social Profiles Box */}
+              <div className="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Share2 className="w-8 h-8 text-slate-700" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-6">Social Profiles</h3>
+                  <div className="flex justify-center space-x-4">
+                    <a
+                      href={`https://wa.me/${portfolioData.personal.phone.replace(/\D/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center hover:bg-slate-200 transition-all duration-300 hover:scale-110"
+                    >
+                      <MessageCircle className="w-6 h-6 text-slate-700" />
+                    </a>
+                    <a
+                      href={portfolioData.personal.social.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center hover:bg-slate-200 transition-all duration-300 hover:scale-110"
+                    >
+                      <Github className="w-6 h-6 text-slate-700" />
+                    </a>
+                    <a
+                      href={portfolioData.personal.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center hover:bg-slate-200 transition-all duration-300 hover:scale-110"
+                    >
+                      <Linkedin className="w-6 h-6 text-slate-700" />
+                    </a>
+                    <a
+                      href={`mailto:${portfolioData.personal.email}`}
+                      className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center hover:bg-slate-200 transition-all duration-300 hover:scale-110"
+                    >
+                      <Mail className="w-6 h-6 text-slate-700" />
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              {/* Contact Information Box */}
+              <div className="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-6 text-center">Contact Information</h3>
+                  
+                  {/* Email Section */}
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mr-4">
+                      <Mail className="w-6 h-6 text-slate-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-700 mb-1">Email</h4>
+                      <p className="text-slate-600">{portfolioData.personal.email}</p>
+                    </div>
+                  </div>
+
+                  {/* Phone Section */}
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mr-4">
+                      <Phone className="w-6 h-6 text-slate-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-700 mb-1">Phone</h4>
+                      <p className="text-slate-600">{portfolioData.personal.phone}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
-            {/* Contact Form */}
-            <div>
-              <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-navy-900 mb-6">Send a Message</h3>
-                
+            {/* Right Column - Contact Form */}
+            <div className="bg-slate-50 rounded-lg p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+              <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                  
+                  {/* Name and Email Row */}
+                  <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
-                        Your Name
-                      </label>
                       <input
                         type="text"
-                        id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-all duration-200 outline-none"
-                        placeholder="John Doe"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 outline-none"
+                        placeholder="Your Name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                        Email Address
-                      </label>
                       <input
                         type="email"
-                        id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-all duration-200 outline-none"
-                        placeholder="john@example.com"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 outline-none"
+                        placeholder="Your Email"
                       />
                     </div>
                   </div>
 
+                  {/* Subject */}
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
-                      Subject
-                    </label>
                     <input
                       type="text"
-                      id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-all duration-200 outline-none"
-                      placeholder="Project Collaboration"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 outline-none"
+                      placeholder="Subject"
                     />
                   </div>
 
+                  {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                      Message
-                    </label>
                     <textarea
-                      id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
-                      placeholder="Tell me about your project or how we can work together..."
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-500 focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
+                      placeholder="Message"
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-navy-600 to-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-navy-700 hover:to-blue-700 transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group"
-                  >
+                  {/* Send Message Button */}
+                  <div className="flex justify-end">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-slate-900 transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 group"
+                    >
                     {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -213,28 +204,31 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
                     ) : (
                       <>
                         Send Message
-                        <Send size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
+                        <Send size={18} className="group-hover:translate-x-1 transition-transform duration-200" />
                       </>
                     )}
                   </button>
+                </div>
 
-                  {/* Status Messages */}
-                  {submitStatus === 'success' && (
-                    <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
-                      <CheckCircle size={20} />
-                      <span>Message sent successfully! I'll get back to you soon.</span>
-                    </div>
-                  )}
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="flex items-center gap-3 p-4 bg-green-900/20 border border-green-400/30 rounded-lg text-green-400">
+                    <CheckCircle size={20} />
+                    <span>Message sent successfully! I'll get back to you soon.</span>
+                  </div>
+                )}
 
-                  {submitStatus === 'error' && (
-                    <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
-                      <AlertCircle size={20} />
-                      <span>There was an error sending your message. Please try again.</span>
-                    </div>
-                  )}
-                </form>
-              </div>
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-3 p-4 bg-red-900/20 border border-red-400/30 rounded-lg text-red-400">
+                    <AlertCircle size={20} />
+                    <span>There was an error sending your message. Please try again.</span>
+                  </div>
+                )}
+
+              </form>
             </div>
+          </div>
+
           </div>
         </div>
       </div>

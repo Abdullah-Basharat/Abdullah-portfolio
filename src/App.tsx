@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Experience from './pages/Experience';
+
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
@@ -42,7 +42,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home portfolioData={portfolioData} />} />
             <Route path="/about" element={<About portfolioData={portfolioData} />} />
-            <Route path="/experience" element={<Experience portfolioData={portfolioData} />} />
+
             <Route path="/projects" element={<Projects portfolioData={portfolioData} />} />
             <Route path="/resume" element={<Resume portfolioData={portfolioData} />} />
             <Route path="/contact" element={<Contact portfolioData={portfolioData} />} />

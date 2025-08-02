@@ -29,10 +29,9 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
     <section id="projects" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-navy-600 to-blue-600 mx-auto mb-8"></div>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
             Explore my latest work in AI/ML, showcasing innovative solutions and cutting-edge technologies
           </p>
@@ -45,7 +44,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                 onClick={() => setFilter(category)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   filter === category
-                    ? 'bg-navy-600 text-white shadow-lg'
+                    ? 'bg-slate-700 text-white shadow-lg'
                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
@@ -56,7 +55,9 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project: any, index: number) => (
             <div
               key={project.id}
@@ -83,17 +84,17 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
               {/* Project Content */}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-navy-100 text-navy-700 text-sm font-medium rounded-lg">
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-lg">
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="px-3 py-1 bg-gold-100 text-gold-700 text-sm font-medium rounded-lg">
+                    <span className="px-3 py-1 bg-amber-100 text-amber-700 text-sm font-medium rounded-lg">
                       Featured
                     </span>
                   )}
                 </div>
 
-                <h3 className="text-xl font-bold text-navy-900 mb-3 group-hover:text-navy-600 transition-colors duration-200">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-slate-700 transition-colors duration-200">
                   {project.title}
                 </h3>
 
@@ -124,7 +125,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-slate-600 hover:text-navy-600 transition-colors duration-200"
+                    className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors duration-200"
                   >
                     <Github size={18} />
                     <span className="text-sm font-medium">Code</span>
@@ -134,7 +135,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-slate-600 hover:text-navy-600 transition-colors duration-200"
+                      className="flex items-center gap-2 text-slate-600 hover:text-slate-800 transition-colors duration-200"
                     >
                       <ExternalLink size={18} />
                       <span className="text-sm font-medium">Demo</span>
@@ -144,7 +145,9 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
               </div>
             </div>
           ))}
+          </div>
         </div>
+      </div>
 
         {/* Project Modal */}
         {selectedProject && (
@@ -152,7 +155,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
             <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
               {/* Modal Header */}
               <div className="sticky top-0 bg-white border-b p-6 flex items-center justify-between">
-                <h3 className="text-2xl font-bold text-navy-900">{selectedProject.title}</h3>
+                <h3 className="text-2xl font-bold text-slate-900">{selectedProject.title}</h3>
                 <button
                   onClick={closeProjectModal}
                   className="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center transition-colors duration-200"
@@ -174,7 +177,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
 
                 {/* Description */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-navy-900 mb-3">About This Project</h4>
+                  <h4 className="text-lg font-semibold text-slate-900 mb-3">About This Project</h4>
                   <p className="text-slate-600 leading-relaxed">
                     {selectedProject.longDescription}
                   </p>
@@ -182,12 +185,12 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-navy-900 mb-3">Technologies Used</h4>
+                  <h4 className="text-lg font-semibold text-slate-900 mb-3">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech: string) => (
                       <span
                         key={tech}
-                        className="px-3 py-2 bg-navy-100 text-navy-700 rounded-lg text-sm font-medium"
+                        className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -201,7 +204,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                     href={selectedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-navy-600 text-white px-6 py-3 rounded-lg hover:bg-navy-700 transition-colors duration-200"
+                    className="flex items-center gap-2 bg-slate-700 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors duration-200"
                   >
                     <Github size={20} />
                     View Code
@@ -211,10 +214,10 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                       href={selectedProject.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 border-2 border-navy-600 text-navy-600 px-6 py-3 rounded-lg hover:bg-navy-600 hover:text-white transition-all duration-200"
+                      className="flex items-center gap-2 border-2 border-slate-700 text-slate-700 px-6 py-3 rounded-lg hover:bg-slate-700 hover:text-white transition-all duration-200 group"
                     >
-                      <ExternalLink size={20} />
-                      Live Demo
+                      <ExternalLink size={20} className="group-hover:text-white" />
+                      <span className="group-hover:text-white">Live Demo</span>
                     </a>
                   )}
                 </div>

@@ -7,7 +7,7 @@ interface ResumeProps {
 
 const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
   return (
-    <div className="page-container pt-20">
+    <div className="page-container">
       <ResumeSection portfolioData={portfolioData} />
     </div>
   );
