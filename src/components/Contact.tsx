@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle, Share2, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   portfolioData: any;
 }
 
 const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,13 +27,30 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      // EmailJS configuration
+      // You'll need to replace these with your actual EmailJS credentials
+      const serviceId = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your service ID
+      const templateId = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your template ID
+      const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your public key
+
+      const result = await emailjs.sendForm(
+        serviceId,
+        templateId,
+        formRef.current!,
+        publicKey
+      );
+
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
+      console.error('Email sending failed:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -44,7 +63,7 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="clamp(2rem, 4vw, 3rem) font-bold text-[#f9fafb] mb-6 leading-[1.2]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f9fafb] mb-6 leading-[1.2]">
             Contact Me
           </h2>
         </div>
@@ -53,91 +72,7 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
         <div className="max-w-6xl mx-auto mb-16">
           <div className="grid lg:grid-cols-2 gap-8">
             
-            {/* Left Column - Contact Information */}
-            <div className="space-y-6">
-              
-              {/* Social Profiles Box */}
-              <div 
-                className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
-                style={{
-                  backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
-                }}
-              >
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-[#374151] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#8b5cf6] transition-all duration-200">
-                    <Share2 className="w-8 h-8 text-[#8b5cf6] group-hover:text-white transition-colors duration-200" />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#f9fafb] mb-6">Social Profiles</h3>
-                  <div className="flex justify-center space-x-4">
-                    <a
-                      href={`https://wa.me/${portfolioData.personal.phone.replace(/\D/g, '')}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
-                    >
-                      <MessageCircle className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
-                    </a>
-                    <a
-                      href={portfolioData.personal.social.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
-                    >
-                      <Github className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
-                    </a>
-                    <a
-                      href={portfolioData.personal.social.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
-                    >
-                      <Linkedin className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
-                    </a>
-                    <a
-                      href={`mailto:${portfolioData.personal.email}`}
-                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
-                    >
-                      <Mail className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Information Box */}
-              <div 
-                className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
-                style={{
-                  backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
-                }}
-              >
-                {/* Contact Info Header with Icon and Title */}
-                <div className="flex pb-4 items-center">
-                  <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
-                    <Phone className="w-12 h-12" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#f9fafb]">Contact Information</h3>
-                </div>
-
-                {/* Contact Details as List */}
-                <ul className="list-disc space-y-2 pl-6">
-                  <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-[#8b5cf6]" />
-                    {portfolioData.personal.email}
-                  </li>
-                  <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-[#8b5cf6]" />
-                    {portfolioData.personal.phone}
-                  </li>
-                  <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#8b5cf6]" />
-                    {portfolioData.personal.location}
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-
-            {/* Right Column - Contact Form */}
+            {/* Left Column - Contact Form */}
             <div 
               className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
               style={{
@@ -152,14 +87,14 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
                 <h3 className="text-2xl font-bold text-[#f9fafb]">Send Message</h3>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 
                 {/* Name and Email Row */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <input
                       type="text"
-                      name="name"
+                      name="user_name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -170,7 +105,7 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
                   <div>
                     <input
                       type="email"
-                      name="email"
+                      name="user_email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -242,6 +177,91 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
                   </div>
                 )}
               </form>
+            </div>
+
+            {/* Right Column - Contact Information */}
+            <div className="space-y-6">
+              
+              {/* Social Profiles Box */}
+              <div 
+                className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                style={{
+                  backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+                }}
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-[#374151] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#8b5cf6] transition-all duration-200">
+                    <Share2 className="w-8 h-8 text-[#8b5cf6] group-hover:text-white transition-colors duration-200" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#f9fafb] mb-6">Social Profiles</h3>
+                  <div className="flex justify-center space-x-4">
+                    
+                    <a
+                      href={portfolioData.personal.social.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
+                    >
+                      <Github className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
+                    </a>
+                    <a
+                      href={portfolioData.personal.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
+                    >
+                      <Linkedin className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
+                    </a>
+                    <a
+                      href={`mailto:${portfolioData.personal.email}`}
+                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
+                    >
+                      <Mail className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
+                    </a>
+                    <a
+                      href={`https://wa.me/${portfolioData.personal.phone.replace(/\D/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-[#374151] rounded-full flex items-center justify-center hover:bg-[#8b5cf6] transition-all duration-300 hover:scale-110"
+                    >
+                      <MessageCircle className="w-6 h-6 text-[#9ca3af] hover:text-white transition-colors duration-200" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contact Information Box */}
+              <div 
+                className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                style={{
+                  backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+                }}
+              >
+                {/* Contact Info Header with Icon and Title */}
+                <div className="flex pb-4 items-center">
+                  <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                    <Phone className="w-12 h-12" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#f9fafb]">Contact Information</h3>
+                </div>
+
+                {/* Contact Details as List */}
+                <ul className="list-disc space-y-2 pl-6">
+                  <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
+                    <Mail className="w-4 h-4 text-[#8b5cf6]" />
+                    {portfolioData.personal.email}
+                  </li>
+                  <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
+                    <Phone className="w-4 h-4 text-[#8b5cf6]" />
+                    {portfolioData.personal.phone}
+                  </li>
+                  <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-[#8b5cf6]" />
+                    {portfolioData.personal.location}
+                  </li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>

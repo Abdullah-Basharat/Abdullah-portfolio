@@ -7,9 +7,8 @@ interface ResumeProps {
 
 const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
   const handleDownload = () => {
-    // In a real application, this would download the actual PDF
-    // For now, we'll show an alert
-    alert('Resume download will be implemented with your actual PDF file');
+    // Open the Google Drive link in a new tab
+    window.open('https://drive.google.com/file/d/1DkgpILurJeFSK4Ig36Q8vNOxlrEgkvJW/view?usp=sharing', '_blank');
   };
 
   const expertiseAreas = [

@@ -10,22 +10,22 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
     {
       title: 'Programming',
       icon: <Code className="w-6 h-6" />,
-      skills: portfolioData.skills.programming,
+      skills: portfolioData.resume.skills.programming,
     },
     {
       title: 'AI/ML',
       icon: <Brain className="w-6 h-6" />,
-      skills: portfolioData.skills.aiml,
+      skills: portfolioData.resume.skills.aiml,
     },
     {
       title: 'Data Engineering',
       icon: <Database className="w-6 h-6" />,
-      skills: portfolioData.skills.dataEngineering,
+      skills: portfolioData.resume.skills.dataEngineering,
     },
     {
       title: 'Tools & Technologies',
       icon: <Wrench className="w-6 h-6" />,
-      skills: portfolioData.skills.tools,
+      skills: portfolioData.resume.skills.tools,
     }
   ];
 
@@ -43,15 +43,15 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case 'smile':
-        return <Smile className="w-8 h-8 text-navy-600" />;
+        return <Smile className="w-8 h-8 text-[#8b5cf6]" />;
       case 'bar-chart':
-        return <BarChart3 className="w-8 h-8 text-navy-600" />;
+        return <BarChart3 className="w-8 h-8 text-[#8b5cf6]" />;
       case 'clock':
-        return <Clock className="w-8 h-8 text-navy-600" />;
+        return <Clock className="w-8 h-8 text-[#8b5cf6]" />;
       case 'shield':
-        return <Shield className="w-8 h-8 text-navy-600" />;
+        return <Shield className="w-8 h-8 text-[#8b5cf6]" />;
       default:
-        return <Smile className="w-8 h-8 text-navy-600" />;
+        return <Smile className="w-8 h-8 text-[#8b5cf6]" />;
     }
   };
 
@@ -75,7 +75,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h2 className="clamp(2rem, 4vw, 3rem) font-bold text-[#f9fafb] mb-6 leading-[1.2]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f9fafb] mb-6 leading-[1.2]">
             About Me
           </h2>
           <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
@@ -172,7 +172,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
           {/* Technical Skills Section */}
           <div className="mt-16">
             <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-12">Technical Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {skillCategories.map((category, index) => (
                 <div
                   key={category.title}
@@ -192,7 +192,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 dark:text-gray-400 pb-4">
+                  <p className="text-[#e5e7eb] pb-4">
                     {getCategoryDescription(category.title)}
                   </p>
 
