@@ -29,7 +29,7 @@ const Services: React.FC<ServicesProps> = ({ portfolioData }) => {
                 title={service.title}
               />
 
-              <p className="text-[#e5e7eb] pb-4">
+              <p className="text-[#9ca3af] pb-4">
                 {service.description}
               </p>
 

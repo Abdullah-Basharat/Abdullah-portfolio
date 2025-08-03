@@ -36,10 +36,19 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
       const templateId = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your template ID
       const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your public key
 
+      // Create a temporary form with EmailJS-compatible field names
+      const tempForm = document.createElement('form');
+      tempForm.innerHTML = `
+        <input name="user_name" value="${formData.name}" />
+        <input name="user_email" value="${formData.email}" />
+        <input name="subject" value="${formData.subject}" />
+        <textarea name="message">${formData.message}</textarea>
+      `;
+
       const result = await emailjs.sendForm(
         serviceId,
         templateId,
-        formRef.current!,
+        tempForm,
         publicKey
       );
 
@@ -70,18 +79,18 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
 
         {/* Main Content - Two Columns */}
         <div className="max-w-6xl mx-auto mb-16">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Left Column - Contact Form */}
             <div 
-              className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+              className="flex flex-col border border-[#374151] rounded-xl p-6 md:p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
               style={{
                 backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
               }}
             >
               {/* Contact Form Header with Icon and Title */}
               <div className="flex pb-4 items-center">
-                <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                <div className="text-[#8b5cf6] mr-6">
                   <Send className="w-12 h-12" />
                 </div>
                 <h3 className="text-2xl font-bold text-[#f9fafb]">Send Message</h3>
@@ -90,11 +99,11 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 
                 {/* Name and Email Row */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <input
                       type="text"
-                      name="user_name"
+                      name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
@@ -105,7 +114,7 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
                   <div>
                     <input
                       type="email"
-                      name="user_email"
+                      name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
@@ -184,7 +193,7 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
               
               {/* Social Profiles Box */}
               <div 
-                className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                className="flex flex-col border border-[#374151] rounded-xl p-6 md:p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
                 style={{
                   backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
                 }}
@@ -232,14 +241,14 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
 
               {/* Contact Information Box */}
               <div 
-                className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                className="flex flex-col border border-[#374151] rounded-xl p-6 md:p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
                 style={{
                   backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
                 }}
               >
                 {/* Contact Info Header with Icon and Title */}
                 <div className="flex pb-4 items-center">
-                  <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                  <div className="text-[#8b5cf6] mr-6">
                     <Phone className="w-12 h-12" />
                   </div>
                   <h3 className="text-2xl font-bold text-[#f9fafb]">Contact Information</h3>

@@ -9,7 +9,7 @@ interface CardHeaderProps {
 const CardHeader: React.FC<CardHeaderProps> = ({ icon, title, className = '' }) => {
   return (
     <div className={`flex pb-4 items-center ${className}`}>
-      <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+      <div className="text-[#8b5cf6] mr-6">
         {icon}
       </div>
       <h3 className="text-2xl font-bold text-[#f9fafb]">

@@ -28,7 +28,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ portfolioData }) =>
                 title={project.title}
               />
 
-              <p className="text-[#e5e7eb] pb-4">
+              <p className="text-[#9ca3af] pb-4">
                 {project.description}
               </p>
 

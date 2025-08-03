@@ -76,7 +76,8 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="absolute bottom-6 right-6 w-12 h-12 bg-[#1f2937] hover:bg-[#8b5cf6] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-md border border-[#374151] hover:border-[#8b5cf6]"
+        className="absolute bottom-6 right-6 w-12 h-12 bg-[#1f2937] hover:bg-[#8b5cf6] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-[#374151] hover:border-[#8b5cf6] z-50 cursor-pointer"
+        aria-label="Scroll to top"
       >
         <ArrowUp size={20} className="text-[#9ca3af] hover:text-white transition-colors duration-200" />
       </button>

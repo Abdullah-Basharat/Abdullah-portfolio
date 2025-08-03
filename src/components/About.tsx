@@ -115,29 +115,29 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
               </div>
             </div>
 
-            {/* Key Metrics - 1 per row on mobile, 2 per row on tablet, 4 per row on desktop */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Key Metrics - 1 per row on mobile, 2 per row on medium and large screens */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {portfolioData.about.metrics.map((metric: any, index: number) => (
                 <div 
                   key={index} 
-                  className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+                  className="flex flex-col border border-[#374151] rounded-xl p-6 md:p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
                   style={{
                     backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
                   }}
                 >
                   {/* Metric Header with Icon and Title */}
-                  <div className="flex pb-4 items-center justify-center">
-                    <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                  <div className="flex pb-4 items-center">
+                    <div className="text-3xl md:text-4xl font-bold text-[#8b5cf6] mr-4 md:mr-6 flex-shrink-0">
                       {getIconComponent(metric.icon)}
                     </div>
-                    <h3 className="text-2xl font-bold text-[#f9fafb]">{metric.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-[#f9fafb] break-words">{metric.title}</h3>
                   </div>
 
                   {/* Metric Number */}
-                  <div className="text-3xl font-bold text-[#f9fafb] mb-2 text-center">{metric.number}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#f9fafb] mb-2 break-words">{metric.number}</div>
 
                   {/* Metric Description */}
-                  <p className="text-[#e5e7eb] text-sm leading-relaxed text-center">{metric.description}</p>
+                  <p className="text-xs md:text-sm leading-relaxed text-[#9ca3af] break-words">{metric.description}</p>
                 </div>
               ))}
             </div>
@@ -183,8 +183,8 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
                 >
                   {/* Technical Skills Header with Icon and Title */}
                   <div className="flex pb-4 items-center">
-                    <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
-                      {category.icon}
+                    <div className="text-[#8b5cf6] mr-6">
+                      {React.cloneElement(category.icon, { className: "w-12 h-12" })}
                     </div>
                     <h4 className="text-2xl font-bold text-[#f9fafb]">
                       {category.title}
@@ -192,7 +192,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#e5e7eb] pb-4">
+                  <p className="text-[#9ca3af] pb-4">
                     {getCategoryDescription(category.title)}
                   </p>
 
@@ -223,7 +223,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
                 >
                   {/* Certificate Header with Icon and Title */}
                   <div className="flex pb-4 items-center">
-                    <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                    <div className="text-[#8b5cf6] mr-6">
                       <Award className="w-12 h-12" />
                     </div>
                     <h4 className="text-2xl font-bold text-[#f9fafb]">

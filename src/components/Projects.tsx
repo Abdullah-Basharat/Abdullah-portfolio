@@ -101,7 +101,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
               </div>
 
               {/* Project Description */}
-              <p className="text-gray-600 dark:text-gray-400 pb-4">
+              <p className="text-[#9ca3af] pb-4">
                 {project.description}
               </p>
 
