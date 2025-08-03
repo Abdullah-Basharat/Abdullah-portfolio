@@ -13,22 +13,19 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
   return (
     <footer className="bg-[#0a0a0a] text-[#f9fafb] py-8 relative border-t border-[#374151]">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:justify-between md:items-center">
-          {/* Left Side - Name and Location */}
-          <div className="text-center md:text-left">
+        <div className="flex flex-col items-center space-y-6">
+          {/* Centered Footer Content */}
+          <div className="text-center">
             <h2 className="text-xl font-bold text-[#f9fafb] mb-2">
               {portfolioData.personal.name}
             </h2>
             <div className="text-[#9ca3af] text-sm mb-2">
               🇵🇰 Based in Pakistan
             </div>
-            <div className="text-[#9ca3af] text-sm">
+            <div className="text-[#9ca3af] text-sm mb-4">
               © 2024 {portfolioData.personal.name.split(' ')[0]}. All rights are reserved.
             </div>
-          </div>
-
-          {/* Right Side - Tech Stack and Social Icons */}
-          <div className="text-center md:text-right">
+            
             <div className="text-[#9ca3af] text-sm mb-2">
               Website Designed in Figma. Built with React, TypeScript
             </div>
@@ -37,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
             </div>
             
             {/* Social Icons */}
-            <div className="flex justify-center md:justify-end space-x-4">
+            <div className="flex justify-center space-x-4">
               <a
                 href={portfolioData.personal.social.github}
                 target="_blank"
@@ -73,7 +70,7 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
+      {/* Scroll to Top Button - Right Side */}
       <button
         onClick={scrollToTop}
         className="absolute bottom-6 right-6 w-12 h-12 bg-[#1f2937] hover:bg-[#8b5cf6] rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg border border-[#374151] hover:border-[#8b5cf6] z-50 cursor-pointer"
