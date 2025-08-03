@@ -13,9 +13,9 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
   return (
     <footer className="bg-[#0a0a0a] text-[#f9fafb] py-8 relative border-t border-[#374151]">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:justify-between md:items-center">
           {/* Left Side - Name and Location */}
-          <div className="mb-6 md:mb-0">
+          <div className="text-center md:text-left">
             <h2 className="text-xl font-bold text-[#f9fafb] mb-2">
               {portfolioData.personal.name}
             </h2>
@@ -28,7 +28,7 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
           </div>
 
           {/* Right Side - Tech Stack and Social Icons */}
-          <div className="text-right">
+          <div className="text-center md:text-right">
             <div className="text-[#9ca3af] text-sm mb-2">
               Website Designed in Figma. Built with React, TypeScript
             </div>
@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
             </div>
             
             {/* Social Icons */}
-            <div className="flex justify-end space-x-4">
+            <div className="flex justify-center md:justify-end space-x-4">
               <a
                 href={portfolioData.personal.social.github}
                 target="_blank"
