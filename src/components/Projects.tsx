@@ -65,22 +65,20 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-[#0a0a0a]">
+    <section id="projects" className="py-16 bg-[#0a0a0a]">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="clamp(2rem, 4vw, 3rem) font-bold text-[#f9fafb] mb-6 leading-[1.2]">
+        <div className="text-center mb-12">
+          <h2 className="clamp(2rem, 4vw, 3rem) font-bold text-[#f9fafb] mb-4 leading-[1.2]">
             Featured Projects
           </h2>
           <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
             Explore my latest work in AI/ML, showcasing innovative solutions and cutting-edge technologies
           </p>
-
-
         </div>
 
         {/* Projects Grid */}
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project: any, index: number) => (
             <div

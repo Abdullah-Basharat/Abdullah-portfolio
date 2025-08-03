@@ -71,11 +71,11 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
   };
 
   return (
-    <section id="about" className="py-24 bg-[#0a0a0a]">
+    <section id="about" className="py-16 bg-[#0a0a0a]">
       <div className="container mx-auto px-6">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f9fafb] mb-6 leading-[1.2]">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f9fafb] mb-4 leading-[1.2]">
             About Me
           </h2>
           <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
@@ -85,9 +85,9 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
 
         <div className="max-w-6xl mx-auto">
           {/* Personal Information and Metrics Section */}
-          <div className="mb-16">
+          <div className="mb-12">
             {/* Personal Information - Two Columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8">
               {/* Left Column */}
               <div className="space-y-4">
                 {personalInfo.slice(0, 4).map((info, index) => (
@@ -145,12 +145,12 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
 
           {/* Skills Proficiency Section */}
           <div 
-            className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+            className="flex flex-col border border-[#374151] rounded-xl p-6 md:p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
             style={{
               backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
             }}
           >
-            <h3 className="text-2xl font-bold text-[#f9fafb] mb-8 text-center">Skills Proficiency</h3>
+            <h3 className="text-2xl font-bold text-[#f9fafb] mb-6 text-center">Skills Proficiency</h3>
             <div className="space-y-6">
               {portfolioData.about.skills.map((skill: any, index: number) => (
                 <div key={index}>
@@ -170,8 +170,8 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
           </div>
 
           {/* Technical Skills Section */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-12">Technical Skills</h3>
+          <div className="mt-12">
+            <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-8">Technical Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {skillCategories.map((category, index) => (
                 <div
@@ -210,8 +210,8 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
           </div>
 
           {/* Certificates and Awards */}
-          <div className="mt-16">
-            <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-12">Certificates and Awards</h3>
+          <div className="mt-12">
+            <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-8">Certificates and Awards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {portfolioData.resume.certificates?.map((certificate: any, index: number) => (
                 <div

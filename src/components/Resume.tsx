@@ -33,12 +33,12 @@ const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
   ];
 
   return (
-    <section id="resume" className="py-24 bg-[#0a0a0a]">
+    <section id="resume" className="py-16 bg-[#0a0a0a]">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto mb-16">
+        <div className="max-w-6xl mx-auto mb-12">
           {/* Summary Section */}
           <div 
-            className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+            className="flex flex-col border border-[#374151] rounded-xl p-6 md:p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
             style={{
               backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
             }}
@@ -76,7 +76,7 @@ const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
             </div>
           </div>
 
-          <div className="mt-16">
+          <div className="mt-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
             {/* Education Section */}
             <div 

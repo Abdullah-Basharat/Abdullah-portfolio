@@ -32,9 +32,9 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
     try {
       // EmailJS configuration
       // You'll need to replace these with your actual EmailJS credentials
-      const serviceId = 'YOUR_EMAILJS_SERVICE_ID'; // Replace with your service ID
-      const templateId = 'YOUR_EMAILJS_TEMPLATE_ID'; // Replace with your template ID
-      const publicKey = 'YOUR_EMAILJS_PUBLIC_KEY'; // Replace with your public key
+      const serviceId = 'service_x9ns9il'; // Replace with your service ID
+      const templateId = 'template_eybt4lx'; // Replace with your template ID
+      const publicKey = '_1r0kXJf0RVehl2Tn'; // Replace with your public key
 
       // Create a temporary form with EmailJS-compatible field names
       const tempForm = document.createElement('form');
@@ -68,17 +68,17 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
   };
 
   return (
-    <section className="py-24 bg-[#0a0a0a]">
+    <section className="py-16 bg-[#0a0a0a]">
       <div className="container mx-auto px-6">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f9fafb] mb-6 leading-[1.2]">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#f9fafb] mb-4 leading-[1.2]">
             Contact Me
           </h2>
         </div>
 
         {/* Main Content - Two Columns */}
-        <div className="max-w-6xl mx-auto mb-16">
+        <div className="max-w-6xl mx-auto mb-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
             {/* Left Column - Contact Form */}
