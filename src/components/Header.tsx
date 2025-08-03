@@ -1,15 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Code } from 'lucide-react';
 
 interface HeaderProps {
   portfolioData: any;
 }
 
+// Logo Component
+const Logo: React.FC<{ initials: string }> = ({ initials }) => {
+  return (
+    <div className="flex items-center">
+      {/* Logo Text Only */}
+      <span className="text-[1.25rem] font-bold text-[#f9fafb]">{initials}</span>
+    </div>
+  );
+};
+
 const Header: React.FC<HeaderProps> = ({ portfolioData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  // Function to get initials from name
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(word => word.charAt(0))
+      .join('')
+      .toUpperCase();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +64,8 @@ const Header: React.FC<HeaderProps> = ({ portfolioData }) => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-[1.25rem] font-bold text-[#f9fafb] hover:text-[#8b5cf6] transition-colors duration-200">
-            {portfolioData.personal.name}
+          <Link to="/" className="hover:opacity-80 transition-opacity duration-200">
+            <Logo initials={getInitials(portfolioData.personal.name)} />
           </Link>
 
           {/* Desktop Navigation */}

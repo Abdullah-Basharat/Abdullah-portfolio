@@ -59,21 +59,21 @@ const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
               </p>
             </div>
 
-            {/* Contact Details as List */}
-            <ul className="list-disc space-y-2 pl-6">
-              <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
+            {/* Contact Details */}
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#8b5cf6]" />
-                {portfolioData.resume.contact.location}
-              </li>
-              <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
+                <span className="font-medium text-[#e5e7eb]">{portfolioData.resume.contact.location}</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#8b5cf6]" />
-                {portfolioData.resume.contact.phone}
-              </li>
-              <li className="font-medium text-[#e5e7eb] flex items-center gap-2">
+                <span className="font-medium text-[#e5e7eb]">{portfolioData.resume.contact.phone}</span>
+              </div>
+              <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#8b5cf6]" />
-                {portfolioData.resume.contact.email}
-              </li>
-            </ul>
+                <span className="font-medium text-[#e5e7eb]">{portfolioData.resume.contact.email}</span>
+              </div>
+            </div>
           </div>
 
           <div className="mt-16">
