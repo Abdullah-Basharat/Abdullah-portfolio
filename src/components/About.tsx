@@ -115,8 +115,8 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
               </div>
             </div>
 
-            {/* Key Metrics - 2x2 Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Key Metrics - 1 per row on mobile, 2 per row on tablet, 4 per row on desktop */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {portfolioData.about.metrics.map((metric: any, index: number) => (
                 <div 
                   key={index} 

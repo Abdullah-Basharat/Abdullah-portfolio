@@ -54,21 +54,21 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
       <div className="container mx-auto px-6 py-20 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Name */}
-          <h1 className="clamp(2.5rem, 5vw, 4rem) font-extrabold text-[#f9fafb] mb-6 animate-slide-up leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#f9fafb] mb-6 animate-slide-up leading-[1.1]">
             {portfolioData.personal.name}
           </h1>
 
           {/* Dynamic Role */}
-          <div className="text-2xl md:text-3xl text-[#e5e7eb] mb-8 h-12 flex items-center justify-center animate-slide-up-delay-1">
-            <span className="mr-3">I'm a</span>
-            <span className="text-[#8b5cf6] font-semibold min-w-[300px] text-left">
+          <div className="text-2xl md:text-3xl lg:text-4xl text-[#e5e7eb] mb-8 h-14 flex flex-col sm:flex-row items-center justify-center animate-slide-up-delay-1">
+            <span className="mr-0 sm:mr-3 mb-2 sm:mb-0">I'm a</span>
+            <span className="text-[#8b5cf6] font-semibold min-w-[200px] sm:min-w-[300px] text-center sm:text-left">
               {displayText}
               <span className="animate-pulse">|</span>
             </span>
           </div>
 
           {/* Tagline */}
-          <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto mb-12 leading-[1.7] animate-slide-up-delay-2">
+          <p className="text-lg md:text-xl text-[#e5e7eb] max-w-3xl mx-auto mb-12 leading-[1.7] animate-slide-up-delay-2">
             {portfolioData.personal.tagline}
           </p>
 
@@ -76,14 +76,14 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-slide-up-delay-3">
             <Link
               to="/projects"
-              className="bg-[#8b5cf6] text-white px-6 py-3 rounded-lg hover:bg-[#7c3aed] transition-all duration-150 ease-in-out hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center gap-2 group font-medium text-[1.125rem] leading-[1.2]"
+              className="bg-[#8b5cf6] text-white px-6 py-3 rounded-lg hover:bg-[#7c3aed] transition-all duration-150 ease-in-out hover:shadow-lg transform hover:scale-[1.02] flex items-center justify-center gap-2 group font-medium text-base leading-[1.2]"
             >
               <span className="group-hover:text-white">View My Work</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
               to="/contact"
-              className="border border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-150 ease-in-out transform hover:scale-[1.02] group font-medium text-[1.125rem] leading-[1.2]"
+              className="border border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-150 ease-in-out transform hover:scale-[1.02] group font-medium text-base leading-[1.2]"
             >
               <span className="group-hover:text-white">Get In Touch</span>
             </Link>
