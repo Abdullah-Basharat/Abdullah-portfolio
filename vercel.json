@@ -1,0 +1,27 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [
+          {
+            "type": "host",
+            "value": "abdullahbasharat.live"
+          }
+        ],
+        "destination": "https://www.abdullahbasharat.live/:splat",
+        "permanent": true
+      },
+      {
+        "source": "/(.*)",
+        "has": [
+          {
+            "type": "scheme",
+            "value": "http"
+          }
+        ],
+        "destination": "https://www.abdullahbasharat.live/:splat",
+        "permanent": true
+      }
+    ]
+  }
+  
