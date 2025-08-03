@@ -10,17 +10,6 @@
         ],
         "destination": "https://www.abdullahbasharat.live/:splat",
         "permanent": true
-      },
-      {
-        "source": "/(.*)",
-        "has": [
-          {
-            "type": "scheme",
-            "value": "http"
-          }
-        ],
-        "destination": "https://www.abdullahbasharat.live/:splat",
-        "permanent": true
       }
     ]
   }
