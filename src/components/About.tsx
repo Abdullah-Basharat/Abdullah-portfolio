@@ -213,35 +213,65 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
           <div className="mt-12">
             <h3 className="text-3xl font-bold text-[#f9fafb] text-center mb-8">Certificates and Awards</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {portfolioData.resume.certificates?.map((certificate: any, index: number) => (
-                <div
-                  key={index}
-                  className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
-                  style={{
-                    backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
-                  }}
-                >
-                  {/* Certificate Header with Icon and Title */}
-                  <div className="flex pb-4 items-center">
-                    <div className="text-[#8b5cf6] mr-6">
-                      <Award className="w-12 h-12" />
+              {portfolioData.resume.certificates?.map((certificate: any, index: number) => {
+                const CertificateCard = (
+                  <div
+                    className={`flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1 ${
+                      certificate.link ? 'cursor-pointer' : ''
+                    }`}
+                    style={{
+                      backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+                    }}
+                  >
+                    {/* Certificate Header with Icon and Title */}
+                    <div className="flex pb-4 items-center">
+                      <div className="text-[#8b5cf6] mr-6">
+                        <Award className="w-12 h-12" />
+                      </div>
+                      <h4 className="text-2xl font-bold text-[#f9fafb]">
+                        {certificate.name}
+                      </h4>
                     </div>
-                    <h4 className="text-2xl font-bold text-[#f9fafb]">
-                      {certificate.name}
-                    </h4>
-                  </div>
 
-                  {/* Certificate Details as List */}
-                  <ul className="list-disc space-y-2 pl-6">
-                    <li className="font-medium text-[#e5e7eb]">
-                      <strong>Issuer:</strong> {certificate.issuer}
-                    </li>
-                    <li className="font-medium text-[#e5e7eb]">
-                      <strong>Date:</strong> {certificate.date}
-                    </li>
-                  </ul>
-                </div>
-              ))}
+                    {/* Certificate Details as List */}
+                    <ul className="list-disc space-y-2 pl-6">
+                      <li className="font-medium text-[#e5e7eb]">
+                        <strong>Issuer:</strong> {certificate.issuer}
+                      </li>
+                      <li className="font-medium text-[#e5e7eb]">
+                        <strong>Date:</strong> {certificate.date}
+                      </li>
+                      {certificate.link && (
+                        <li className="font-medium text-[#8b5cf6] mt-3">
+                          <span className="text-sm">Click to view certificate →</span>
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                );
+
+                // If certificate has a link, wrap it in an anchor tag
+                if (certificate.link) {
+                  return (
+                    <a
+                      key={index}
+                      href={certificate.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      {CertificateCard}
+                    </a>
+                  );
+                }
+
+                // If no link, return the card as is
+                return (
+                  <div key={index}>
+                    {CertificateCard}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

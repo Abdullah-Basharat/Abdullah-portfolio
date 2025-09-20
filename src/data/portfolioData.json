@@ -102,34 +102,41 @@
     },
     "certificates": [
       {
+        "name": "Build Autonomous AI Agents with LangGraph",
+        "issuer": "DeepLearning.AI",
+        "date": "2025",
+        "link": "https://learn.deeplearning.ai/accomplishments/0759539f-9c3c-4e54-852e-31c21a32a993?usp=sharing"
+      },
+      {
+        "name": "LangChain for LLM Application Development",
+        "issuer": "DeepLearning.AI",
+        "date": "2025",
+        "link": "https://learn.deeplearning.ai/accomplishments/816026c5-d002-472a-920a-cfc49d924f46?usp=sharing"
+      },
+      {
+        "name": "Prompt Engineering for Developers",
+        "issuer": "Coursera - University of Michigan",
+        "date": "2025",
+        "link": "https://learn.deeplearning.ai/accomplishments/b59e5845-c6e4-495e-816b-cf8bfb50c82e?usp=sharing"
+      },
+      {
         "name": "Machine Learning Specialization",
         "issuer": "Coursera - Stanford University",
-        "date": "2024"
+        "date": "2025",
+        "link": "https://coursera.org/verify/specialization/ODFKYOC9B5KJ"
+      },
+      
+      {
+        "name": "Exploratory Data Analysis for Machine Learning",
+        "issuer": "Coursera - IBM",
+        "date": "2024",
+        "link": "https://coursera.org/verify/Z9FJR75ZP9L5"
       },
       {
-        "name": "Deep Learning with TensorFlow",
-        "issuer": "Google Cloud",
-        "date": "2024"
-      },
-      {
-        "name": "AWS Certified Solutions Architect",
-        "issuer": "Amazon Web Services",
-        "date": "2024"
-      },
-      {
-        "name": "TensorFlow Developer Certificate",
-        "issuer": "Google",
-        "date": "2023"
-      },
-      {
-        "name": "Computer Vision Specialization",
-        "issuer": "Coursera - University of Michigan",
-        "date": "2023"
-      },
-      {
-        "name": "Natural Language Processing",
-        "issuer": "Coursera - DeepLearning.AI",
-        "date": "2023"
+        "name": "Python for Data Science and AI",
+        "issuer": "Cognitive Class.ai",
+        "date": "2023",
+        "link": "https://courses.cognitiveclass.ai/certificates/97f6e142b6ab4cfb9d63ce52e2a128f2"
       }
     ],
     "education": [
