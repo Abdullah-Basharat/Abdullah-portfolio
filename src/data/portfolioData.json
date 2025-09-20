@@ -125,7 +125,6 @@
         "date": "2025",
         "link": "https://coursera.org/verify/specialization/ODFKYOC9B5KJ"
       },
-      
       {
         "name": "Exploratory Data Analysis for Machine Learning",
         "issuer": "Coursera - IBM",
@@ -248,40 +247,42 @@
   "projects": [
     {
       "id": 1,
-      "title": "PSL Recognition(Sign Language)",
-      "description": "Advanced computer vision system for recognizing Pakistan Sign Language gestures using I3D ConvNet architecture.",
-      "longDescription": "Developed a comprehensive sign language recognition system achieving 88% accuracy on 30 gesture classes. The system uses advanced deep learning techniques including I3D ConvNet for temporal feature extraction and real-time gesture recognition.",
-      "technologies": ["Python", "TensorFlow", "OpenCV", "I3D ConvNet", "Computer Vision"],
-      "image": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "github": "https://github.com/abdullahbasharat/psl-recognition",
-      "demo": "",
+      "title": "Constitution of Pakistan Chatbot",
+      "description": "An AI-powered chatbot to answer questions about the Constitution of Pakistan.",
+      "longDescription": "Built an intelligent chatbot that allows users to explore and understand the Constitution of Pakistan in an interactive way. The system uses modern NLP techniques with LangChain and large language models to provide accurate, conversational responses. It supports semantic search across constitutional articles and delivers concise answers with references.",
+      "technologies": ["Python", "Streamlit", "LangChain", "Pinecone", "OpenAI/Groq"],
+      "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/Abdullah-Basharat/Chatbot-of-Pakistan-Constitution-using-streamlit",
+      "demo": "https://chatbot-of-pakistan-constitution-using-app-7cqncvjv2a4qbe5v9se.streamlit.app/",
+      "featured": true,
+      "category": "NLP"
+    },
+    {
+      "id": 2,
+      "title": "YOLO Object Detection System",
+      "description": "An object detection system using YOLO to process images and video files with bounding boxes.",
+      "longDescription": "Built an object detection application powered by the YOLO model to analyze images and video files. The system detects multiple object classes with high accuracy, draws bounding boxes with labels, and allows users to download annotated outputs. Implemented with Streamlit for a simple and user-friendly interface.",
+      "technologies": ["Python", "YOLO", "Ultralytics", "OpenCV", "Streamlit"],
+      "image": "https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/Abdullah-Basharat/Object-Detection-with-YOLO-and-streamlit-app",
+      "demo": "https://object-detection-with-yolo-and-app-app-wyzths4zzfwm3enqqgyppb.streamlit.app/",
       "featured": true,
       "category": "Computer Vision"
     },
     {
-      "id": 2,
-      "title": "RAG-Powered Chatbot",
-      "description": "Intelligent chatbot leveraging Retrieval-Augmented Generation with LangChain and ChromaDB for context-aware responses.",
-      "longDescription": "Built a sophisticated chatbot system using RAG architecture with LangChain, LangGraph, and ChromaDB. Features include agentic chunking, real-time context retrieval, and multi-turn conversation handling with high accuracy.",
-      "technologies": ["Python", "LangChain", "ChromaDB", "RAG", "LLMs", "FastAPI"],
-      "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "github": "https://github.com/abdullahbasharat/rag-chatbot",
-      "demo": "",
-      "featured": true,
-      "category": "AI/ML"
-    },
-    {
       "id": 3,
-      "title": "Speech-to-Text & OCR Pipeline",
-      "description": "Bilingual text processing system supporting English and Urdu with advanced OCR capabilities.",
-      "longDescription": "Developed a comprehensive text processing pipeline supporting both speech-to-text conversion and optical character recognition for English and Urdu languages. Integrates OpenCV for image preprocessing and Tesseract for accurate text extraction.",
-      "technologies": ["Python", "OpenCV", "Tesseract", "NLP", "Speech Recognition"],
-      "image": "https://images.pexels.com/photos/5965592/pexels-photo-5965592.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "github": "https://github.com/abdullahbasharat/speech-ocr-pipeline",
+      "title": "RCNN-Based Object Segmentation",
+      "description": "Object segmentation system using RCNN for detecting and segmenting objects in images.",
+      "longDescription": "Developed an object segmentation pipeline using RCNN to accurately detect and segment objects in images. The system generates pixel-level masks for multiple object classes and supports evaluation on standard datasets. Implemented with deep learning frameworks for high accuracy in computer vision tasks.",
+      "technologies": ["Python", "TensorFlow", "Keras", "OpenCV", "RCNN"],
+      "image": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/Abdullah-Basharat/RCNN-Object-Segmentation",
       "demo": "",
       "featured": true,
-      "category": "NLP"
+      "category": "Computer Vision"
     }
+    
+    
   ],
   "achievements": [
     "Dean's List recognition for academic excellence (GPA: 3.86/4.00)",

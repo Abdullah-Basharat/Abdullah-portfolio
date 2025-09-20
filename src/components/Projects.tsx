@@ -83,34 +83,43 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
           {filteredProjects.map((project: any, index: number) => (
             <div
               key={project.id}
-              className="flex flex-col border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1"
+              onClick={() => openProjectModal(project)}
+              className="flex flex-col h-full border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1 cursor-pointer"
               style={{
                 backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
               }}
             >
               {/* Project Header with Icon and Title */}
               <div className="flex pb-4 items-start">
-                <div className="text-4xl font-bold text-[#8b5cf6] mr-6">
+                <div className="text-4xl font-bold text-[#8b5cf6] mr-6 flex-shrink-0">
                   {getProjectIcon(project.category)}
                 </div>
-                <h3 className="text-2xl font-bold text-[#f9fafb] text-left">
+                <h3 className="text-2xl font-bold text-[#f9fafb] text-left leading-tight">
                   {project.title}
                 </h3>
               </div>
 
               {/* Project Description */}
-              <p className="text-[#9ca3af] pb-4">
+              <p className="text-[#9ca3af] pb-4 flex-grow">
                 {project.description}
               </p>
 
               {/* Technologies as List */}
-              <ul className="list-disc space-y-2 pl-6">
+              <ul className="list-disc space-y-2 pl-6 mb-4">
                 {project.technologies.slice(0, 4).map((tech: string) => (
                   <li key={tech} className="font-medium text-[#e5e7eb]">
                     {tech}
                   </li>
                 ))}
               </ul>
+
+              {/* View Project Indicator */}
+              <div className="mt-auto pt-4 border-t border-[#374151]">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-[#8b5cf6] font-medium">Click to view details</span>
+                  <Eye className="w-4 h-4 text-[#8b5cf6]" />
+                </div>
+              </div>
             </div>
           ))}
           </div>
@@ -120,15 +129,20 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
         {/* Project Modal */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div 
+              className="bg-[#0a0a0a] border border-[#374151] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto backdrop-blur-3xl"
+              style={{
+                backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
+              }}
+            >
               {/* Modal Header */}
-              <div className="sticky top-0 bg-white border-b p-6 flex items-center justify-between">
-                <h3 className="text-2xl font-bold text-slate-900">{selectedProject.title}</h3>
+              <div className="sticky top-0 bg-[#0a0a0a] border-b border-[#374151] p-6 flex items-center justify-between">
+                <h3 className="text-2xl font-bold text-[#f9fafb]">{selectedProject.title}</h3>
                 <button
                   onClick={closeProjectModal}
-                  className="w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  className="w-10 h-10 bg-[#374151] hover:bg-[#4b5563] rounded-lg flex items-center justify-center transition-colors duration-200"
                 >
-                  <X size={20} />
+                  <X size={20} className="text-[#f9fafb]" />
                 </button>
               </div>
 
@@ -145,20 +159,20 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
 
                 {/* Description */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-slate-900 mb-3">About This Project</h4>
-                  <p className="text-slate-600 leading-relaxed">
+                  <h4 className="text-lg font-semibold text-[#f9fafb] mb-3">About This Project</h4>
+                  <p className="text-[#9ca3af] leading-relaxed">
                     {selectedProject.longDescription}
                   </p>
                 </div>
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-slate-900 mb-3">Technologies Used</h4>
+                  <h4 className="text-lg font-semibold text-[#f9fafb] mb-3">Technologies Used</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech: string) => (
                       <span
                         key={tech}
-                        className="px-3 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium"
+                        className="px-3 py-2 bg-[#374151] text-[#e5e7eb] rounded-lg text-sm font-medium"
                       >
                         {tech}
                       </span>
@@ -172,21 +186,29 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                     href={selectedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-slate-700 text-white px-6 py-3 rounded-lg hover:bg-slate-800 transition-colors duration-200"
+                    className="flex items-center gap-2 bg-[#8b5cf6] text-white px-6 py-3 rounded-lg hover:bg-[#7c3aed] transition-colors duration-200"
                   >
                     <Github size={20} />
                     View Code
                   </a>
-                  {selectedProject.demo && (
+                  {selectedProject.demo ? (
                     <a
                       href={selectedProject.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 border-2 border-slate-700 text-slate-700 px-6 py-3 rounded-lg hover:bg-slate-700 hover:text-white transition-all duration-200 group"
+                      className="flex items-center gap-2 border-2 border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-200 group"
                     >
                       <ExternalLink size={20} className="group-hover:text-white" />
                       <span className="group-hover:text-white">Live Demo</span>
                     </a>
+                  ) : (
+                    <button
+                      className="flex items-center gap-2 border-2 border-[#6b7280] text-[#6b7280] px-6 py-3 rounded-lg cursor-not-allowed opacity-50"
+                      disabled
+                    >
+                      <ExternalLink size={20} />
+                      Demo Coming Soon
+                    </button>
                   )}
                 </div>
               </div>
