@@ -53,7 +53,7 @@ function App() {
             <Route path="/about" element={<About portfolioData={portfolioData} />} />
             <Route path="/projects" element={<Projects portfolioData={portfolioData} />} />
             <Route path="/resume" element={<Resume portfolioData={portfolioData} />} />
-            <Route path="/contact" element={<Contact portfolioData={portfolioData} />} />
+            {/* <Route path="/contact" element={<Contact portfolioData={portfolioData} />} /> */}
           </Routes>
         </main>
         <Footer portfolioData={portfolioData} />
