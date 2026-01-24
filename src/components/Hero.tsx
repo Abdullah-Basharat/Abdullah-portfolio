@@ -81,12 +81,12 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
               <span className="group-hover:text-white">View My Work</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
-            <Link
+            {/* <Link
               to="/contact"
               className="border border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-150 ease-in-out transform hover:scale-[1.02] group font-medium text-base leading-[1.2]"
             >
               <span className="group-hover:text-white">Get In Touch</span>
-            </Link>
+            </Link> */}
           </div>
 
           {/* Social Links */}
