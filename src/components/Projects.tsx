@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, X, Eye, Brain, Code, Database, Cpu, Globe, FileText, Shield, Zap, Target, Rocket } from 'lucide-react';
+import { ExternalLink, Github, X, ChevronLeft, ChevronRight, Eye, Brain, Code, Database, Cpu, Globe, FileText, Shield, Zap, Target, Rocket } from 'lucide-react';
 
 interface ProjectsProps {
   portfolioData: any;
@@ -7,8 +7,13 @@ interface ProjectsProps {
 
 const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [filter, setFilter] = useState('All');
+
+  const categories = ['All', 'AI/ML', 'Computer Vision', 'NLP'];
   
-  const filteredProjects = portfolioData.projects;
+  const filteredProjects = filter === 'All' 
+    ? portfolioData.projects 
+    : portfolioData.projects.filter((project: any) => project.category === filter);
 
   const getProjectIcon = (category: string) => {
     switch (category.toLowerCase()) {
@@ -79,7 +84,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
             <div
               key={project.id}
               onClick={() => openProjectModal(project)}
-              className="flex flex-col md:h-full border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1 cursor-pointer"
+              className="flex flex-col h-full border border-[#374151] rounded-xl p-8 backdrop-blur-3xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-300 group hover:-translate-y-1 cursor-pointer"
               style={{
                 backgroundImage: `radial-gradient(146.13% 118.42% at 50% -15.5%, hsla(0, 0%, 100%, .04) 0, hsla(0, 0%, 100%, 0) 99.59%), linear-gradient(180deg, rgba(46, 51, 90, 0), rgba(28, 27, 51, .04))`
               }}
@@ -95,7 +100,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
               </div>
 
               {/* Project Description */}
-              <p className="text-[#9ca3af] pb-4 md:flex-grow">
+              <p className="text-[#9ca3af] pb-4 flex-grow">
                 {project.description}
               </p>
 
@@ -109,7 +114,7 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
               </ul>
 
               {/* View Project Indicator */}
-              <div className="md:mt-auto pt-4 border-t border-[#374151]">
+              <div className="mt-auto pt-4 border-t border-[#374151]">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-[#8b5cf6] font-medium">Click to view details</span>
                   <Eye className="w-4 h-4 text-[#8b5cf6]" />
@@ -176,36 +181,36 @@ const Projects: React.FC<ProjectsProps> = ({ portfolioData }) => {
                 </div>
 
                 {/* Links */}
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                      <a
-                        href={selectedProject.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 bg-[#8b5cf6] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-[#7c3aed] transition-colors duration-200 text-sm sm:text-base"
-                      >
-                        <Github size={18} className="sm:w-5 sm:h-5" />
-                        View Code
-                      </a>
-                      {selectedProject.demo ? (
-                        <a
-                          href={selectedProject.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 border-2 border-[#8b5cf6] text-[#8b5cf6] px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-200 group text-sm sm:text-base"
-                        >
-                          <ExternalLink size={18} className="group-hover:text-white sm:w-5 sm:h-5" />
-                          <span className="group-hover:text-white">Live Demo</span>
-                        </a>
-                      ) : (
-                        <button
-                          className="flex items-center justify-center gap-2 border-2 border-[#6b7280] text-[#6b7280] px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg cursor-not-allowed opacity-50 text-sm sm:text-base"
-                          disabled
-                        >
-                          <ExternalLink size={18} className="sm:w-5 sm:h-5" />
-                          Demo Coming Soon
-                        </button>
-                      )}
-                    </div>
+                <div className="flex gap-4">
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-[#8b5cf6] text-white px-6 py-3 rounded-lg hover:bg-[#7c3aed] transition-colors duration-200"
+                  >
+                    <Github size={20} />
+                    View Code
+                  </a>
+                  {selectedProject.demo ? (
+                    <a
+                      href={selectedProject.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 border-2 border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-200 group"
+                    >
+                      <ExternalLink size={20} className="group-hover:text-white" />
+                      <span className="group-hover:text-white">Live Demo</span>
+                    </a>
+                  ) : (
+                    <button
+                      className="flex items-center gap-2 border-2 border-[#6b7280] text-[#6b7280] px-6 py-3 rounded-lg cursor-not-allowed opacity-50"
+                      disabled
+                    >
+                      <ExternalLink size={20} />
+                      Demo Coming Soon
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

@@ -35,13 +35,13 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ portfolioData }) =>
       <div className="max-w-6xl mx-auto">
         <Grid cols="2">
           {portfolioData.projects.slice(0, 6).map((project) => (
-            <Card key={project.id} onClick={() => openProjectModal(project)} className="cursor-pointer flex flex-col md:h-full">
+            <Card key={project.id} onClick={() => openProjectModal(project)} className="cursor-pointer flex flex-col h-full">
               <CardHeader 
                 icon={getProjectIcon(project.category)}
                 title={project.title}
               />
 
-              <p className="text-[#9ca3af] pb-4 md:flex-grow">
+              <p className="text-[#9ca3af] pb-4 flex-grow">
                 {project.description}
               </p>
 
@@ -54,7 +54,7 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ portfolioData }) =>
               </ul>
 
               {/* View Project Indicator */}
-              <div className="md:mt-auto pt-4 border-t border-[#374151]">
+              <div className="mt-auto pt-4 border-t border-[#374151]">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-[#8b5cf6] font-medium">Click to view details</span>
                   <Eye className="w-4 h-4 text-[#8b5cf6]" />
@@ -120,36 +120,36 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ portfolioData }) =>
               </div>
 
               {/* Links */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 bg-[#8b5cf6] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-[#7c3aed] transition-colors duration-200 text-sm sm:text-base"
-                    >
-                      <Github size={18} className="sm:w-5 sm:h-5" />
-                      View Code
-                    </a>
-                    {selectedProject.demo ? (
-                      <a
-                        href={selectedProject.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 border-2 border-[#8b5cf6] text-[#8b5cf6] px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-200 group text-sm sm:text-base"
-                      >
-                        <ExternalLink size={18} className="group-hover:text-white sm:w-5 sm:h-5" />
-                        <span className="group-hover:text-white">Live Demo</span>
-                      </a>
-                    ) : (
-                      <button
-                        className="flex items-center justify-center gap-2 border-2 border-[#6b7280] text-[#6b7280] px-4 py-2.5 sm:px-6 sm:py-3 rounded-lg cursor-not-allowed opacity-50 text-sm sm:text-base"
-                        disabled
-                      >
-                        <ExternalLink size={18} className="sm:w-5 sm:h-5" />
-                        Demo Coming Soon
-                      </button>
-                    )}
-                  </div>
+              <div className="flex gap-4">
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-[#8b5cf6] text-white px-6 py-3 rounded-lg hover:bg-[#7c3aed] transition-colors duration-200"
+                >
+                  <Github size={20} />
+                  View Code
+                </a>
+                {selectedProject.demo ? (
+                  <a
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 border-2 border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-200 group"
+                  >
+                    <ExternalLink size={20} className="group-hover:text-white" />
+                    <span className="group-hover:text-white">Live Demo</span>
+                  </a>
+                ) : (
+                  <button
+                    className="flex items-center gap-2 border-2 border-[#6b7280] text-[#6b7280] px-6 py-3 rounded-lg cursor-not-allowed opacity-50"
+                    disabled
+                  >
+                    <ExternalLink size={20} />
+                    Demo Coming Soon
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
