@@ -34,7 +34,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
     { label: 'Website', value: portfolioData.about.personalInfo.website },
     { label: 'Phone', value: portfolioData.about.personalInfo.phone },
     { label: 'City', value: portfolioData.about.personalInfo.city },
-    { label: 'Age', value: portfolioData.about.personalInfo.age },
+    { label: 'Experience', value: portfolioData.about.personalInfo.experience },
     { label: 'Degree', value: portfolioData.about.personalInfo.degree },
     { label: 'Email', value: portfolioData.about.personalInfo.email },
     { label: 'Freelance', value: portfolioData.about.personalInfo.freelance }
@@ -79,7 +79,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
             About Me
           </h2>
           <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
-            I'm a Professional AI/ML Engineer with an experience of 2+ years.
+            I'm a Senior Machine Learning Engineer with an experience of 7+ years.
           </p>
         </div>
 

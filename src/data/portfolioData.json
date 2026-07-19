@@ -3,8 +3,9 @@
     "name": "Abdullah Basharat",
     "title": "AI/ML Engineer",
     "roles": [
+      "Senior ML Engineer",
       "AI/ML Engineer",
-      "Deep Learning Specialist", 
+      "Deep Learning Specialist",
       "RAG Developer",
       "Data Scientist",
       "Computer Vision Expert",
@@ -15,7 +16,7 @@
     "phone": "+92 316 5181993",
     "location": "Lahore, Pakistan",
     "social": {
-      "github": "https://github.com/Abdullah-Basharat",
+      "github": "https://github.com/codegeek010",
       "linkedin": "https://www.linkedin.com/in/abdullah-basharat4/",
       "email": "abdullahbasharat400@gmail.com"
     },
@@ -28,8 +29,8 @@
       "website": "abdullahbasharat.live",
       "phone": "+92 316 5181993",
       "city": "Lahore, Pakistan",
-      "age": "22",
-      "degree": "Bachelor of Data Science",
+      "experience": "7+ Years",
+      "degree": "BS Computer Science",
       "email": "abdullahbasharat400@gmail.com",
       "freelance": "Available"
     },
@@ -47,7 +48,7 @@
         "icon": "bar-chart"
       },
       {
-        "number": "2+",
+        "number": "7+",
         "title": "Years of experience",
         "description": "specializing in cutting-edge AI technologies and production deployments.",
         "icon": "clock"
@@ -94,7 +95,7 @@
     }
   },
   "resume": {
-    "summary": "Innovative and task-driven AI/ML Engineer with 2+ years of experience designing and developing high-quality AI solutions across diverse industries. Expertise in Large Language Models, RAG systems, Computer Vision, and Deep Learning applications.",
+    "summary": "Senior Machine Learning Engineer with 7+ years of experience designing, fine-tuning, deploying, and scaling AI/ML systems in production environments. Expertise in Generative AI, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), AI Agents, MLOps, Cloud Infrastructure, NLP, Computer Vision, Deep Learning, Data Engineering, and Distributed Systems. Proven track record delivering enterprise-grade AI solutions across AWS, Azure, and GCP while driving measurable gains in performance, reliability, and business outcomes.",
     "contact": {
       "location": "Lahore, Pakistan",
       "phone": "+92 316 5181993",
@@ -140,54 +141,68 @@
     ],
     "education": [
       {
-        "degree": "Bachelor of Data Science",
-        "institution": "Punjab University College of Information Technology (PUCIT)",
-        "period": "2021 - 2025",
-        "gpa": "3.86/4.00",
-        "description": "Currently pursuing a Bachelor's degree in Data Science, gaining strong foundation in computer science and mathematics, with particular focus on machine learning, natural language processing, and computer vision."
+        "degree": "BS Computer Science",
+        "institution": "Punjab University, Lahore",
+        "period": "2015 - 2019",
+        "gpa": "",
+        "description": "Completed a Bachelor's degree in Computer Science, building a strong foundation in software engineering, algorithms, and systems design."
       }
     ],
     "experience": [
       {
-        "title": "Senior AI/ML Engineer",
-        "company": "Techtics.ai",
-        "period": "March 2024 – Present",
+        "title": "Senior Machine Learning Engineer",
+        "company": "Azunex",
+        "period": "September 2023 – Present",
         "type": "Full-time",
-        "description": "Leading development and deployment of advanced AI/ML solutions with focus on LLMs and RAG systems.",
+        "description": "Leading development of AI-powered products using LLM pipelines, RAG, and multi-agent systems in production.",
         "achievements": [
-          "Built production-ready RAG systems using LangChain and ChromaDB with 98% accuracy",
-          "Implemented agentic chunking for improved context retrieval and 40% performance boost",
-          "Developed real-time AI-powered chatbots serving 10,000+ users daily",
-          "Led team of 3 junior developers in AI/ML projects"
+          "Led development of an AI-powered productivity platform using LLM pipelines with Retrieval-Augmented Generation (RAG), enabling context-aware automation via LangChain and LangGraph",
+          "Optimized LLM inference performance using AWQ/GPTQ quantization, reducing latency by 45% and cutting infrastructure costs by 30% in production deployments",
+          "Architected and deployed LLM-powered multi-agent systems with planning, memory, and tool orchestration capabilities, enabling autonomous execution of complex workflows",
+          "Improved retrieval layer performance using sparse-dense hybrid search and embedding caching strategies, increasing system throughput by 3x under high-concurrency workloads",
+          "Developed and executed LLMOps CI/CD pipelines for continuous evaluation and deployment of RAG systems, reducing release cycles from 2 weeks to under 4 hours",
+          "Improved RAG quality using automated evaluation frameworks (RAGAS) to continuously measure and optimize retrieval relevance and response quality"
         ]
       },
       {
-        "title": "AI/ML Engineer",
-        "company": "Techtics.ai", 
-        "period": "June 2023 – February 2024",
+        "title": "Machine Learning Engineer",
+        "company": "Accenture",
+        "period": "May 2022 – August 2023",
         "type": "Full-time",
-        "description": "Developed and deployed machine learning models and AI solutions for various clients.",
+        "description": "Built and deployed production ML systems and data pipelines for enterprise clients.",
         "achievements": [
-          "Developed computer vision models for object detection achieving 92% accuracy",
-          "Built NLP pipelines for text classification and sentiment analysis",
-          "Optimized ML pipelines resulting in 50% faster inference times",
-          "Deployed 15+ AI models to production environments"
+          "Developed and optimized ML models for classification, recommendation, and forecasting tasks, improving predictive accuracy by 25% across core business metrics",
+          "Built and maintained data preprocessing, feature engineering, and ETL pipelines processing millions of records daily with 99.9% uptime",
+          "Containerized and deployed 5+ models as REST APIs on AWS using Docker and FastAPI, reducing deployment cycle time from days to under 2 hours",
+          "Implemented automated model performance monitoring and retraining triggers, maintaining model drift within acceptable thresholds across 12+ production models",
+          "Developed image-based analytical methods and generated synthetic datasets, contributing to a 15% uplift in model robustness on edge-case inputs"
+        ]
+      },
+      {
+        "title": "Machine Learning Engineer",
+        "company": "Genomage Solutions",
+        "period": "May 2019 – April 2022",
+        "type": "Full-time",
+        "description": "Researched and built computer vision and cloud-based ML systems for enterprise clients.",
+        "achievements": [
+          "Researched and prototyped 3+ surveillance computer vision applications using deep learning, directly informing a product roadmap adopted by 2 enterprise clients",
+          "Contributed to a cloud-based SaaS platform using Python's AWS SDK, integrating 4+ AWS services (S3, Lambda, EC2, SQS) to support scalable data ingestion workflows",
+          "Built RESTful APIs with Django and FastAPI enabling document management and search across 100,000+ records, reducing retrieval latency by 35%",
+          "Deployed and optimized machine learning inference pipelines on 10+ Raspberry Pi edge devices, achieving real-time predictions under hardware constraints"
         ]
       }
     ],
     "skills": {
-      "programming": ["Python", "SQL", "JavaScript", "Django", "FastAPI"],
-      "aiml": ["LLMs", "RAG Systems", "Computer Vision", "TensorFlow", "PyTorch", "Scikit-learn"],
-      "dataEngineering": ["BigQuery", "MongoDB", "AWS", "Azure", "PostgreSQL"],
-      "tools": ["LangChain", "ChromaDB", "OpenCV", "Git", "Docker", "Jupyter"]
+      "programming": ["Python", "SQL", "FastAPI", "Django", "Flask", "REST APIs"],
+      "aiml": ["LLMs", "RAG", "AI Agents", "LangChain", "LangGraph", "Computer Vision", "NLP", "Fine-Tuning (LoRA/QLoRA)"],
+      "dataEngineering": ["AWS", "Azure", "GCP", "Docker", "Kubernetes", "PostgreSQL", "MongoDB", "Terraform"],
+      "tools": ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Pandas", "NumPy", "Airflow", "Hugging Face Transformers"]
     },
       "achievements": [
-    "Dean's List recognition for academic excellence (GPA: 3.86/4.00)",
-    "Successfully deployed 25+ AI/ML models in production environments",
-    "Contributed to 10+ open-source AI/ML projects with 500+ stars",
-    "Published research paper on 'Advanced Computer Vision for Sign Language Recognition'",
-    "Speaker at AI/ML conferences and workshops",
-    "Mentored 15+ junior developers in AI/ML technologies"
+    "Reduced LLM inference latency by 45% and infrastructure costs by 30% through quantization techniques",
+    "Automated resolution of 65% of tier-1 and tier-2 operational tickets via a multi-agent orchestration framework",
+    "Delivered enterprise-grade AI solutions across AWS, Azure, and GCP with measurable gains in performance and reliability",
+    "Built recruitment ML systems processing 10,000+ candidate profiles per month with a 22% improvement in shortlist precision"
   ]
   },
   "skills": {
