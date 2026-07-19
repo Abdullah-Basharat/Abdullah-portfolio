@@ -32,11 +32,11 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
   const personalInfo = [
     { label: 'Name', value: portfolioData.about.personalInfo.name },
     { label: 'Website', value: portfolioData.about.personalInfo.website },
-    // { label: 'Phone', value: portfolioData.about.personalInfo.phone },
+    { label: 'Phone', value: portfolioData.about.personalInfo.phone },
     { label: 'City', value: portfolioData.about.personalInfo.city },
-    { label: 'Age', value: portfolioData.about.personalInfo.age },
+    { label: 'Experience', value: portfolioData.about.personalInfo.experience },
     { label: 'Degree', value: portfolioData.about.personalInfo.degree },
-    // { label: 'Email', value: portfolioData.about.personalInfo.email },
+    { label: 'Email', value: portfolioData.about.personalInfo.email },
     { label: 'Freelance', value: portfolioData.about.personalInfo.freelance }
   ];
 
@@ -79,7 +79,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
             About Me
           </h2>
           <p className="text-lg text-[#e5e7eb] max-w-3xl mx-auto leading-[1.7]">
-            I'm a Professional AI/ML Engineer with an experience of 2+ years.
+            I'm a Senior Machine Learning Engineer with an experience of 7+ years.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8">
               {/* Left Column */}
               <div className="space-y-4">
-                {personalInfo.slice(0, 3).map((info, index) => (
+                {personalInfo.slice(0, 4).map((info, index) => (
                   <div key={index} className="flex items-center">
                     <Play className="w-4 h-4 text-[#8b5cf6] mr-3 flex-shrink-0" />
                     <div>
@@ -103,7 +103,7 @@ const About: React.FC<AboutProps> = ({ portfolioData }) => {
 
               {/* Right Column */}
               <div className="space-y-4">
-                {personalInfo.slice(3, 6).map((info, index) => (
+                {personalInfo.slice(4, 8).map((info, index) => (
                   <div key={index} className="flex items-center">
                     <Play className="w-4 h-4 text-[#8b5cf6] mr-3 flex-shrink-0" />
                     <div>

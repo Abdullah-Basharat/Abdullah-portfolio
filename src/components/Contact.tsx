@@ -151,7 +151,7 @@ const Contact: React.FC<ContactProps> = ({ portfolioData }) => {
                 </div>
 
                 {/* Send Message Button */}
-                <div className="flex justify-end">
+                <div className="flex justify-start">
                   <button
                     type="submit"
                     disabled={isSubmitting}

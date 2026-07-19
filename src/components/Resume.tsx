@@ -8,7 +8,7 @@ interface ResumeProps {
 const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
   const handleDownload = () => {
     // Open the Google Drive link in a new tab
-    window.open('https://drive.google.com/file/d/1DkgpILurJeFSK4Ig36Q8vNOxlrEgkvJW/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/105y1EyRyLaRYGqk1KRtAZjSG3h65uyH6/view?usp=sharing', '_blank');
   };
 
   const expertiseAreas = [
@@ -65,14 +65,14 @@ const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
                 <MapPin className="w-4 h-4 text-[#8b5cf6]" />
                 <span className="font-medium text-[#e5e7eb]">{portfolioData.resume.contact.location}</span>
               </div>
-              {/* <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#8b5cf6]" />
                 <span className="font-medium text-[#e5e7eb]">{portfolioData.resume.contact.phone}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#8b5cf6]" />
                 <span className="font-medium text-[#e5e7eb]">{portfolioData.resume.contact.email}</span>
-              </div> */}
+              </div>
             </div>
           </div>
 

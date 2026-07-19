@@ -23,16 +23,9 @@ const Footer: React.FC<FooterProps> = ({ portfolioData }) => {
               🇵🇰 Based in Pakistan
             </div>
             <div className="text-[#9ca3af] text-sm mb-4">
-              © 2024 {portfolioData.personal.name.split(' ')[0]}. All rights are reserved.
+              © 2026 {portfolioData.personal.name.split(' ')[0]}. All rights are reserved.
             </div>
-            
-            <div className="text-[#9ca3af] text-sm mb-2">
-              Website Designed in Figma. Built with React, TypeScript
-            </div>
-            <div className="text-[#9ca3af] text-sm mb-4">
-              and Tailwind CSS.
-            </div>
-            
+
             {/* Social Icons */}
             <div className="flex justify-center space-x-4">
               <a
