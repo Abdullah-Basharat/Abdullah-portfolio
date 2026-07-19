@@ -6,7 +6,7 @@ import Card from './ui/Card';
 import CardHeader from './ui/CardHeader';
 import Grid from './ui/Grid';
 import { getProjectIcon } from '../utils/icons';
-import { ExternalLink, Github, X, Eye } from 'lucide-react';
+import { Github, X, Eye } from 'lucide-react';
 
 interface FeaturedProjectsProps {
   portfolioData: PortfolioData;
@@ -130,25 +130,6 @@ const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ portfolioData }) =>
                   <Github size={20} />
                   View Code
                 </a>
-                {selectedProject.demo ? (
-                  <a
-                    href={selectedProject.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 border-2 border-[#8b5cf6] text-[#8b5cf6] px-6 py-3 rounded-lg hover:bg-[#8b5cf6] hover:text-white transition-all duration-200 group"
-                  >
-                    <ExternalLink size={20} className="group-hover:text-white" />
-                    <span className="group-hover:text-white">Live Demo</span>
-                  </a>
-                ) : (
-                  <button
-                    className="flex items-center gap-2 border-2 border-[#6b7280] text-[#6b7280] px-6 py-3 rounded-lg cursor-not-allowed opacity-50"
-                    disabled
-                  >
-                    <ExternalLink size={20} />
-                    Demo Coming Soon
-                  </button>
-                )}
               </div>
             </div>
           </div>

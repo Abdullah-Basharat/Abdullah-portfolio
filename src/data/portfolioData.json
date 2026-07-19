@@ -262,42 +262,76 @@
   "projects": [
     {
       "id": 1,
-      "title": "Constitution of Pakistan Chatbot",
-      "description": "An AI-powered chatbot to answer questions about the Constitution of Pakistan.",
-      "longDescription": "Built an intelligent chatbot that allows users to explore and understand the Constitution of Pakistan in an interactive way. The system uses modern NLP techniques with LangChain and large language models to provide accurate, conversational responses. It supports semantic search across constitutional articles and delivers concise answers with references.",
-      "technologies": ["Python", "Streamlit", "LangChain", "Pinecone", "OpenAI/Groq"],
-      "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "github": "https://github.com/Abdullah-Basharat/Chatbot-of-Pakistan-Constitution-using-streamlit",
-      "demo": "https://chatbot-of-pakistan-constitution-using-app-7cqncvjv2a4qbe5v9se.streamlit.app/",
+      "title": "AI Voice Ordering Agent",
+      "description": "A multilingual AI voice agent for restaurant phone ordering, built on LiveKit Agents.",
+      "longDescription": "Built a multilingual voice AI agent that handles full restaurant phone orders end-to-end: browsing the menu, building the order, collecting customer details, and confirming the order. Automatically detects and responds in English, Urdu, Roman Urdu, Punjabi, or Hindi, and integrates with Twilio via LiveKit's SIP connector for production telephony.",
+      "technologies": ["Python", "LiveKit Agents", "OpenAI", "Twilio", "Streamlit"],
+      "image": "https://images.pexels.com/photos/8204385/pexels-photo-8204385.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/codegeek010/AI-Voice-Agent",
+      "demo": "",
+      "featured": true,
+      "category": "AI/ML"
+    },
+    {
+      "id": 2,
+      "title": "AI Research Agent",
+      "description": "A Streamlit app that researches any topic on the web and streams a structured report in real time.",
+      "longDescription": "Built a multi-agent research pipeline with LangGraph: a router classifies input, a planner breaks the topic into sections, parallel researcher nodes search and summarize each section, and a writer streams the final Markdown report token by token. Runs entirely on a local Ollama model with DuckDuckGo search.",
+      "technologies": ["Python", "LangGraph", "Ollama", "Streamlit", "DuckDuckGo"],
+      "image": "https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/codegeek010/Research_Agent",
+      "demo": "",
+      "featured": true,
+      "category": "AI/ML"
+    },
+    {
+      "id": 3,
+      "title": "Automatic License Plate Recognition",
+      "description": "A YOLO-powered app that detects and reads vehicle license plates from images and video.",
+      "longDescription": "Built a modular Streamlit application that runs a trained YOLO model on vehicle images or videos to detect and return number-plate bounding boxes. Processes video uploads frame by frame and renders an annotated output video, with a class-based inference wrapper for swapping in different trained weights.",
+      "technologies": ["Python", "YOLO", "Streamlit", "OpenCV"],
+      "image": "https://images.pexels.com/photos/9891043/pexels-photo-9891043.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/codegeek010/ALPR",
+      "demo": "",
+      "featured": true,
+      "category": "Computer Vision"
+    },
+    {
+      "id": 4,
+      "title": "Whisper Fine-Tuning for Multilingual ASR",
+      "description": "Fine-tuned OpenAI's Whisper model for automatic speech recognition on a low-resource language.",
+      "longDescription": "Fine-tuned openai/whisper-small on Hindi speech from Mozilla Common Voice using Hugging Face Transformers, covering feature extraction, tokenization, training with the Hugging Face Trainer, and word error rate evaluation. Achieved roughly 32% WER after ~4,000 training steps and shipped a Gradio demo for live transcription.",
+      "technologies": ["Python", "Whisper", "Hugging Face Transformers", "PyTorch", "Gradio"],
+      "image": "https://images.pexels.com/photos/27616685/pexels-photo-27616685.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/codegeek010/Fine_tuning_STT",
+      "demo": "",
       "featured": true,
       "category": "NLP"
     },
     {
-      "id": 2,
-      "title": "YOLO Object Detection System",
-      "description": "An object detection system using YOLO to process images and video files with bounding boxes.",
-      "longDescription": "Built an object detection application powered by the YOLO model to analyze images and video files. The system detects multiple object classes with high accuracy, draws bounding boxes with labels, and allows users to download annotated outputs. Implemented with Streamlit for a simple and user-friendly interface.",
-      "technologies": ["Python", "YOLO", "Ultralytics", "OpenCV", "Streamlit"],
-      "image": "https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "github": "https://github.com/Abdullah-Basharat/Object-Detection-with-YOLO-and-streamlit-app",
-      "demo": "https://object-detection-with-yolo-and-app-app-wyzths4zzfwm3enqqgyppb.streamlit.app/",
-      "featured": true,
-      "category": "Computer Vision"
-    },
-    {
-      "id": 3,
-      "title": "RCNN-Based Object Segmentation",
-      "description": "Object segmentation system using RCNN for detecting and segmenting objects in images.",
-      "longDescription": "Developed an object segmentation pipeline using RCNN to accurately detect and segment objects in images. The system generates pixel-level masks for multiple object classes and supports evaluation on standard datasets. Implemented with deep learning frameworks for high accuracy in computer vision tasks.",
-      "technologies": ["Python", "TensorFlow", "Keras", "OpenCV", "RCNN"],
-      "image": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "github": "https://github.com/Abdullah-Basharat/RCNN-Object-Segmentation",
+      "id": 5,
+      "title": "RAG Chatbot",
+      "description": "A document-aware RAG chatbot with document upload, vector search, and user authentication.",
+      "longDescription": "Built a full-stack Retrieval-Augmented Generation chatbot: a FastAPI backend handles PDF ingestion and chunking, ChromaDB stores vector embeddings for semantic search, and a locally-hosted LLaMA 3 model via Ollama generates context-aware responses. Includes JWT authentication with per-user isolated document collections and a React frontend with markdown rendering.",
+      "technologies": ["FastAPI", "React", "LangChain", "ChromaDB", "Ollama", "PostgreSQL"],
+      "image": "https://images.pexels.com/photos/16629368/pexels-photo-16629368.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/codegeek010/RAG_Chatbot",
       "demo": "",
       "featured": true,
-      "category": "Computer Vision"
+      "category": "AI/ML"
+    },
+    {
+      "id": 6,
+      "title": "SprintSync",
+      "description": "An internal work-tracking tool for AI consultancies with LLM-assisted planning.",
+      "longDescription": "Built a lean task and time-tracking tool for AI consultancies with a Kanban board, analytics dashboard, and JWT-based multi-user auth. Integrated OpenAI GPT-4 to generate task descriptions and daily plans, with a graceful fallback when the AI service is unavailable. Deployed on AWS with fully automated infrastructure provisioning via GitHub Actions.",
+      "technologies": ["React", "TypeScript", "FastAPI", "PostgreSQL", "OpenAI"],
+      "image": "https://images.pexels.com/photos/1356384/pexels-photo-1356384.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "github": "https://github.com/codegeek010/SprintSync",
+      "demo": "",
+      "featured": true,
+      "category": "AI/ML"
     }
-    
-    
   ],
   "achievements": [
     "Dean's List recognition for academic excellence (GPA: 3.86/4.00)",
