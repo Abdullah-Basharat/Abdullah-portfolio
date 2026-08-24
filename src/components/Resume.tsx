@@ -8,7 +8,7 @@ interface ResumeProps {
 const Resume: React.FC<ResumeProps> = ({ portfolioData }) => {
   const handleDownload = () => {
     // Open the Google Drive link in a new tab
-    window.open('https://drive.google.com/file/d/105y1EyRyLaRYGqk1KRtAZjSG3h65uyH6/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/12TZMO21foTLa4fzv3l-CgyISYyxiijss/view', '_blank');
   };
 
   const expertiseAreas = [

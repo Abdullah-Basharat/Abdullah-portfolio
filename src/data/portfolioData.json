@@ -20,7 +20,7 @@
       "linkedin": "https://www.linkedin.com/in/abdullah-basharat4/",
       "email": "abdullahbasharat400@gmail.com"
     },
-    "resumeUrl": "/resume.pdf"
+    "resumeUrl": "https://drive.google.com/file/d/12TZMO21foTLa4fzv3l-CgyISYyxiijss/view"
   },
   "about": {
     "introduction": "Passionate AI/ML Engineer with expertise in Large Language Models, RAG systems, and deep learning. Currently pursuing Data Science at PUCIT with a strong academic record and hands-on experience in developing intelligent solutions.",
@@ -42,7 +42,7 @@
         "icon": "smile"
       },
       {
-        "number": "65+",
+        "number": "30+",
         "title": "Projects",
         "description": "successfully completed across AI/ML, Computer Vision, and NLP domains.",
         "icon": "bar-chart"
@@ -154,14 +154,14 @@
         "company": "Azunex",
         "period": "September 2023 – Present",
         "type": "Full-time",
-        "description": "Leading development of AI-powered products using LLM pipelines, RAG, and multi-agent systems in production.",
+        "description": "Architecting a customer support AI platform using LLMs, RAG, LangChain, and LangGraph in production.",
         "achievements": [
-          "Led development of an AI-powered productivity platform using LLM pipelines with Retrieval-Augmented Generation (RAG), enabling context-aware automation via LangChain and LangGraph",
-          "Optimized LLM inference performance using AWQ/GPTQ quantization, reducing latency by 45% and cutting infrastructure costs by 30% in production deployments",
-          "Architected and deployed LLM-powered multi-agent systems with planning, memory, and tool orchestration capabilities, enabling autonomous execution of complex workflows",
-          "Improved retrieval layer performance using sparse-dense hybrid search and embedding caching strategies, increasing system throughput by 3x under high-concurrency workloads",
-          "Developed and executed LLMOps CI/CD pipelines for continuous evaluation and deployment of RAG systems, reducing release cycles from 2 weeks to under 4 hours",
-          "Improved RAG quality using automated evaluation frameworks (RAGAS) to continuously measure and optimize retrieval relevance and response quality"
+          "Architected a customer support AI platform using LLMs, RAG, LangChain, and LangGraph to answer product questions, retrieve support knowledge, analyze documents, and automate operational tasks",
+          "Designed the AI pipeline for support documentation and knowledge bases, covering OCR, document parsing, semantic chunking, embeddings, hybrid retrieval, LLM orchestration, API integration, evaluation, and production deployment",
+          "Built retrieval pipelines for product documentation, support articles, and knowledge bases using BM25 and dense vector search, with metadata enrichment, vector indexing, and embedding caching",
+          "Built LangGraph multi-agent workflows with planner, researcher, and execution agents, implementing tool calling, state management, conversation memory, retries, checkpoints, and human approval",
+          "Improved platform throughput by 3× using asynchronous processing, parallel retrieval, embedding caching, connection pooling, and Kubernetes horizontal autoscaling for high-concurrency workloads",
+          "Implemented automated RAG evaluation and production monitoring using RAGAS and LangSmith, tracking retrieval quality, response quality, agent execution, latency, and tool failures"
         ]
       },
       {
@@ -171,11 +171,11 @@
         "type": "Full-time",
         "description": "Built and deployed production ML systems and data pipelines for enterprise clients.",
         "achievements": [
-          "Developed and optimized ML models for classification, recommendation, and forecasting tasks, improving predictive accuracy by 25% across core business metrics",
-          "Built and maintained data preprocessing, feature engineering, and ETL pipelines processing millions of records daily with 99.9% uptime",
-          "Containerized and deployed 5+ models as REST APIs on AWS using Docker and FastAPI, reducing deployment cycle time from days to under 2 hours",
-          "Implemented automated model performance monitoring and retraining triggers, maintaining model drift within acceptable thresholds across 12+ production models",
-          "Developed image-based analytical methods and generated synthetic datasets, contributing to a 15% uplift in model robustness on edge-case inputs"
+          "Developed and optimized machine learning models for customer analytics, recommendation, classification, and business forecasting using Scikit-learn, XGBoost, and PyTorch",
+          "Built data preprocessing, feature engineering, and ETL pipelines using Python, SQL, and Spark to prepare customer and business datasets for predictive analytics workflows",
+          "Developed and deployed machine learning services as REST APIs using FastAPI and Docker, integrating trained models into production applications and business analytics workflows",
+          "Implemented model evaluation and monitoring workflows to track prediction quality, data drift, and model performance, supporting reliable operation of production machine learning systems",
+          "Performed exploratory data analysis, feature selection, and statistical validation to improve model performance and reduce overfitting across customer and business analytics use cases"
         ]
       },
       {
@@ -185,10 +185,10 @@
         "type": "Full-time",
         "description": "Researched and built computer vision and cloud-based ML systems for enterprise clients.",
         "achievements": [
-          "Researched and prototyped 3+ surveillance computer vision applications using deep learning, directly informing a product roadmap adopted by 2 enterprise clients",
-          "Contributed to a cloud-based SaaS platform using Python's AWS SDK, integrating 4+ AWS services (S3, Lambda, EC2, SQS) to support scalable data ingestion workflows",
-          "Built RESTful APIs with Django and FastAPI enabling document management and search across 100,000+ records, reducing retrieval latency by 35%",
-          "Deployed and optimized machine learning inference pipelines on 10+ Raspberry Pi edge devices, achieving real-time predictions under hardware constraints"
+          "Developed and prototyped computer vision solutions for security and surveillance using PyTorch and deep learning for image classification, object detection, and video-based analytics",
+          "Built cloud-based data processing workflows using Python and AWS, integrating S3, Lambda, EC2, and SQS for scalable surveillance data ingestion and machine learning workloads",
+          "Developed RESTful APIs using Django and FastAPI to integrate computer vision and machine learning capabilities with surveillance applications, backend systems, and search functionality",
+          "Applied production ML practices across data versioning, model evaluation, optimization, deployment, testing, monitoring, and edge inference, improving reliability and maintainability of deployed AI systems"
         ]
       }
     ],
